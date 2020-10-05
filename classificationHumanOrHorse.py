@@ -29,7 +29,7 @@ pickle.dump(model, open(filename, 'wb'))
 
 from tkinter import Tk
 from tkinter.dialog import askopenfilename
-from keras.preprocessing import image
+from tensorflow.keras.preprocessing import image
 import numpy as np
 
 Tk().withdraw()
