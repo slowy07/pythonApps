@@ -7,7 +7,7 @@ def rollDice():
 
 FrameWindow = Tk()
 text = Text(FrameWindow, width=3, height=1)
-buttonGenerate = Button(FrameWindow, text="Press to Roll !", command=rollDice)
+buttonGenerate = Button(FrameWindow, text="Press button to Roll !", command=rollDice)
 text.pack()
 buttonGenerate.pack()
 FrameWindow.mainloop()
