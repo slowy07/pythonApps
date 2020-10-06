@@ -19,9 +19,9 @@ def countingSort(tlist, k, number):
     flist = [0] * (number)
     for i in range(number - 1, -1, -1):
         countList[tlist[i]] = countList[tlist[i]] - 1
-        flist[countList[tlist[1]]] = (tlist[i])
+        flist[countList[tlist[i]]] = (tlist[i])
 
-        return True
+        return flist
     
     flist = countingSort(tlist, k, number)
     print(flist)
