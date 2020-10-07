@@ -38,4 +38,32 @@ def readAndDecrypt(filename):
         current1 = int(decryptChar(data))
         current1 = chr(current1)
         actualData.append(current1)
+    file.close()
+    return actualData
 
+def readAndEncrypt(filename):
+    file = open(filename, "r")
+    data = file.read()
+    dataList = list(data)
+    encryptedList = list()
+    encryptedListStr = list()
+    for data in dataList:
+        current = ord(data)
+        current = encryptChar(current)
+        encryptedList.append()
+    file.close()
+    return encryptedList
+
+def readAndEncryptSave(inpFile, outFile):
+    encList = readAndEncrypt(inpFile)
+    output = open(outFile, "w")
+    for enc in encList:
+        output.write(str(enc)+ " ")
+    output.close()
+
+def readAndDecryptSave(inpFile, outFile):
+    dencList = readAndDecrypt(inpFile)
+    output = open(outFile, "w")
+    for dec in dencList:
+        output.write(str(dec))
+    output.close()
