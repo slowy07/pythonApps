@@ -19,3 +19,15 @@ def news(xmlNewsUrl,counter):
         print(f'news pubDate: {news.pubDate.text}') # to print published date
         
         print("+-" * 20, "\n\n")
+
+        if i == counter:
+            break
+        else:
+            i = i + 1
+
+newsUrl = "https://news.google.com/news/rss/?ned=us&gl=US&hl=en"
+sportUrl = "https://news.google.com/news/rss/headlines/section/topic/SPORTS.en_in/Sports?ned=in&hl=en-IN&gl=IN"
+
+#print news
+news(newsUrl, 10)
+news(sportUrl, 5)
