@@ -1,6 +1,8 @@
 import random
 import time
 
+
+print("----------------------------")
 print("welcome to guessing game")
 time.sleep(1)
 
@@ -23,9 +25,7 @@ while True: #looping
         comGuess = random.randint(0, a)
         a += 1
         count = 1
-    
     elif userGuess == comGuess and count == 0:
         print("you right, magician !")
-
     else:
         print("congratulation you're correctly")
