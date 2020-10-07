@@ -67,3 +67,27 @@ def readAndDecryptSave(inpFile, outFile):
     for dec in dencList:
         output.write(str(dec))
     output.close()
+
+
+#encryption
+for t in text:
+    current = ord(t)
+    current = encryptChar(current)
+    values.append(current)
+
+#decryption
+for v in values:
+    current = int(decryptChar(v))
+    current = chr(current)
+    reverse.append(current)
+print(reverse)
+
+#save data in file
+output = open("encrypted.txt", "w")
+for v in values:
+    output.write(str(v)+ " ")
+output.close()
+
+
+#read
+print(readAndDecrypt("encrtpyed.txt"))
