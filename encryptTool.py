@@ -1,9 +1,6 @@
 from __future__ import print_function
 import math
 
-
-
-
 key = int(math.pi * 1e14)
 text = input("Enter text : ")
 values = reverse = []
