@@ -29,4 +29,23 @@ def crcCheck(data,div):
 while 1 > 0:
     print("enter data")
     data = input()
-    
+    print("enter division: ")
+    div = input()
+    originalData = data
+    data = data + ("0" *(len(div)- 1))
+    crc = crcCheck(data, div)
+    crcStr = ""
+    for c in crc:
+        crcStr += c
+    print("send data :",originalData + crcStr)
+    sentData = originalData + crcStr
+    print("if again applying crc algo, the remainder must be zero if errorless")
+    crc = crcCheck(sentData, div)
+    remainder = crc
+    print("receive side remainder : ",remainder)
+    print("continue [n/y]")
+    ch = input()
+    if ch == 'N' or ch == 'n':
+        break
+    else:
+        continue
