@@ -79,4 +79,72 @@ def simpleColor(r,g,b):
                         return "GREEN"
                 else:
                     return "GREEN"
+            elif r > b:
+                if gb < gr:
+                    if gb <= 20:
+                        return "turqoise"
+                    else:
+                        return "GREEN"
+                else:
+                    return "GREEN"
+        
+        elif b > r and b > g:
+            bg = diff(b,g)
+            br = diff(b,r)
 
+            if r < 65 and g < 65 and bg > 60:
+                return "BLUE"
+            
+            rg = diff(r,g)
+            if g > r:
+                if bg > rg:
+                    if bg <= 20:
+                        return "TURQOISE"
+                    else:
+                        return "LIGHT BLUE"
+                else:
+                    if rg <= 20:
+                        if r <= 150:
+                            return "LILAC"
+                        else:
+                            return "BLUE"
+                    else:
+                        return "BLUE"
+            elif g > r:
+                if br < rg:
+                    if br <= 20:
+                        if r > 50 and g < 75:
+                            return "PINK"
+                        elif ir > 150:
+                            return "LILAC"
+                        else:
+                            return "purple"
+                    else:
+                        return "PURPLE"
+                else:
+                    if rg <= 20:
+                        if bg <= 20:
+                            return "GRAY"
+                        else:
+                            return "BLUE"
+            else:
+                if rg <= 20:
+                    if r >= 100 and b > 60:
+                        return "RED"
+                    elif r >= 100:
+                        return "RED"
+                    else:
+                        return "MARRON"
+                else:
+                    return "GRAY"
+            
+        else:
+            return "GRAY"
+    
+    except:
+        return "Not Color"
+
+
+if __name__ == "__main__":
+    import sys
+    print(simpleColor(sys.argv[1], sys.argv[2], sys.argv[3]))
