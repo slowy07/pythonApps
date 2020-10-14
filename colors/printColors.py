@@ -10,3 +10,10 @@ class colors:
 
 def printColor(color, message):
     print(color + message + colors.ENDC)
+
+
+printColor(colors.CYAN, sys.argv[1])
+printColor(colors.GREEN, sys.argv[1])
+printColor(colors.YELLOW, sys.argv[1])
+printColor(colors.BLUE, sys.argv[1])
+printColor(colors.RED, sys.argv[1])
