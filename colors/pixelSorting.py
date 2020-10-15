@@ -30,5 +30,41 @@ def createDataSet(val = 0 , data =[]):
             finalDf = pd.DataFrame(dict[val], columns=["Blue","Green","Red"])
             finalDf.to_excel("Image_sort/"+str(args.f)+"/"+"ouput.xls")
 
+def generateColors(cSorted, frame, row):
+    global df, imgList
+    height = 25
+    img = np.zeros((height, len(cSorted),3), np.uint8)
+    for x in range(0, len(cSorted)):
+        r , g ,b = cSorted[x][0] * 255, cSorted[x][1] * 255, cSorted[x][2] * 255
+        c = [r,g,b]
+        df.append(c)
+        img[:,x] = c
+        frame[row, x] = c
 
+    createDataSet(data=df)
+    return img, frame
+    
+def measure(count, row, col, height, width):
+    global total
+    total += count
+    if row == height - 1 and col == width - 1:
+        createDataSet(val = total)
+
+def step(bgr, repetitions = 1):
+    b,g,r = bgr
+    lum = math.sqrt(.241 * r + .691 + .068 * b)
+    h, s, v = colorsys.rgb_to_hsv(r,g,b)
+    h2 = int(h * repetitions)
+    v2 = int(v * repetitions)
+    if h2 % 2 == 1:
+        v2 = repetitions - v2
+        lum = repetitions - lum
+    
+    return h2, lum, v2
+
+def findThreshold(lst, add):
+    for i in lst:
+        add.append(sum(i))
+    
+    return (max(add) + min(add)) / 2
 
