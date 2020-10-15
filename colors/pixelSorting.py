@@ -68,3 +68,55 @@ def findThreshold(lst, add):
     
     return (max(add) + min(add)) / 2
 
+def makeVideo():
+    output = cv2.VideoWriter("Image_sort/"+str(args.f)+"/"+str(args.f)+".mp4", cv2.VideoWriter_fourcc(*'mp4v'), 16, (800,500))
+    for count in tqdm(range(1, 500 + 1)):
+        fileName = "Image_sort/"+str(args.f)+"/"+str(count)+".jpg"
+        img = cv2.imread(fileName)
+        output.write(img)
+        os.remove(fileName)
+    output.release()
+
+def main():
+    global imgList
+    img = cv2.imread("Image/"+str(args.f)+".jpg")
+    img = cv2.resize(img, (800,500))
+    imgList.append(img)
+
+    height, width , _ = img.shape
+    print("row wise color sorting")
+    for row in tqdm(range(0, height)):
+        color , color_n = [] , []
+        add = []
+        for col in range(0, width):
+            val = img[row][col].tolist()
+            val = [i / 255.0 for i in val]
+            color.append(val)
+
+        thresh = findThreshold(color, add)
+
+        if np.all(np.asarray(color)) == True:
+            color.sort(key= lambda bgr: step(bgr, 8)) #step sorting
+            band ,img = generateColors(color, img, row)
+            measure(len(color), row, col, height, width)
+        
+        if np.all(np.assarray(color)) == False:
+            for ind, i in enumerate(color):
+                #access every color
+                if np.any(np.assarray(i)) == True and sum(i) < thresh:
+                    color_n.append(i)
+            
+            color_n.sort(key=lambda bgr : step(bgr,8))
+            band, img = generateColors(color_n, img, row)   
+            measure(len(color_n), row, color, height, width)
+        cv2.imwrite("Image_sort/"+str(args.f)+"/"+str(row + 1)+".jpg", img)
+
+    #create final sorting image 
+    cv2.imwrite("Image_sort/"+str(args.f)+"/"+str(args.f)+".jpg", img)
+    print("\n Formation the video progress of the pixel sorted image")
+
+    makeVideo()
+    sound.main(args.f)
+
+#call function
+main()
