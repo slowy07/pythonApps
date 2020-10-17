@@ -1,5 +1,8 @@
 # Python Apps
-![pyhton_programming](https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg)
+![pyhton_programming](https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg) \
+my all pyhton script
+
+
 
 ## clone / donwload repo
 ```bash
