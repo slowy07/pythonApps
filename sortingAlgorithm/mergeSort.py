@@ -21,3 +21,18 @@ def merge(left, right):
             rightIndex += 1
 
     return sortedList
+
+def mergeSort(num):
+    if len(num) <= 1:
+        return num
+
+    mid = len(num) // 2
+
+    leftList = mergeSort(num[:mid])
+    rightList = mergeSort(num[:mid])
+
+    return merge(leftList, rightList)
+
+randomListNumbers = [12,22,72,33,12]
+randomListNumbers = mergeSort(randomListNumbers)
+print(randomListNumbers)
