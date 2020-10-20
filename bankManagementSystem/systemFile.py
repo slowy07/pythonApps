@@ -152,7 +152,7 @@ def showEmployeesForUpdate():
 
 def update_employee_name(newName, oldName):
     print(newName, oldName)
-    cur.execute("update staff set name='{}' where name='{}'".format(new_name, oldName))
+    cur.execute("update staff set name='{}' where name='{}'".format(newName, oldName))
     connect.commit()
 
 
