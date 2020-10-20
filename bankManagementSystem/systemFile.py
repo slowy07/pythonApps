@@ -29,3 +29,161 @@ def checkAdmin(name, password):
     if data[0][0] == name and data[0][0] == password:
         return True
     return
+
+def createEmployee(name, password, salary, position):
+    print(password)
+    cur.execute("INSERT INTO staff VALUES(?,?,?,?)",(name, password, salary, position))
+    connect.commit()
+
+def checkEmployee(name, password):
+    print(password)
+    print(name)
+    cur.execute("SELECT * name, pass FROM staff")
+    data = cur.fetchall()
+    print(data)
+    if len(data) == 0:
+        return False
+    for i in range(len(data)):
+        if data[i][0] == name and data[i][1] == password:
+            return True
+
+    return False
+
+def createCustomer(name, age, address, balance, accType, mobileNumber):
+        global accNo
+        cur.execute("INSERT INTO bank VALUES(?,?,?,?,?,?,?)", (accNo, name, age, address, balance, accType, mobileNumber))
+        connect.commit()
+        accNo = accNo + 1
+
+        return accNo + 1
+
+
+def checkAccNo(accNo):
+    cur.execute("SELECT acc_no FROM bank")
+    listAccNo = cur.fetchall()
+
+    for i in range(len(listAccNo)):
+        if listAccNo[i][0] == int(accNo):
+            return True
+
+    return False
+
+def getDetails(accNo):
+    cur.execute("SELECT * FROM bank WHERE acc_no=?",(accNo))
+    global detail
+    detail = cur.fetchall()
+    print(detail)
+    if len(detail) == 0:
+        return False
+    else:
+        return (detail[0][0], detail[0][1], detail[0][2], detail[0][3], detail[0][4], detail[0][5], detail[0][6])
+
+def updateBalance(newMoney, accNo):
+    cur.execute("SELECT balance FROM bank WHERE acc_no=?",(accNo))
+    balance = cur.fetchall()
+    balance = balance[0][0]
+    newBalance = balance + int(newMoney)
+    cur.execute("UPDATE bank SET balance=? WHERE acc_no =?",(newBalance, accNo))
+    connect.commit()
+
+def deductBalance(newMoney, accNo):
+    cur.execute("SELECT balance FROM bank WHERE acc_no = ?",(accNo))
+    balance = cur.fetchall()
+    balance = balance[0][0]
+    if balance < int(newMoney):
+        return False
+    else:
+        newBalance = balance - int(newMoney)
+        cur.execute("UPDATE bank SET balance=? WHERE acc_no =?",(newBalance, accNo))
+        connect.commit()
+        return True
+
+
+def checkBalance(accNo):
+    cur.execute("SELECT balance FROM bank WHERE acc_no=?", (accNo))
+    balance = cur.fetchall()
+    return balance[0][0]
+
+def updateNameInBankTable(newName, accNo):
+    print(newName)
+    connect.excecute("UPDATE bank SET name='{}' WHERE acc_no={}".format(newName, accNo))
+    connect.commit()
+
+def updateAgeInBankTable(newAge, accNo):
+    print(newAge)
+    connect.excecute("UPDATE bank SET age='{}' WHERE acc_no={}".format(newAge, accNo))
+    connect.commit()
+
+def updateAddressInBankTable(newAddress, accNo):
+    print(newAddress)
+    connect.excecute("UPDATE bank SET address='{}' WHERE acc_no={}".format(newAddress, accNo))
+    connect.commit()
+
+def listAllCustomer():
+    cur.execute("SELECT * FROM bank")
+    detail = cur.fetchall()
+    return detail
+
+def deleteAccount(accNo):
+    cur.execute("DELETE FROM bank WHERE acc_no=?",(accNo))
+    conn.commit()
+
+def showEmployees():
+    cur.execute("SELECT name, salary, position, pass FROM staff")
+    detail = cur.fetchall()
+    return detail
+
+def allMoney():
+    cur.execut("SELECT balance FROM bank")
+    balanceDetail = cur.fetchall()
+    print(balanceDetail)
+    if len(balanceDetail) == 0:
+        return False
+    else:
+        total = 0
+        for i in balanceDetail:
+            total = total + i[0]
+        return total
+
+def showEmployeesForUpdate():
+    cur.execute("SELECT * FROM staff")
+    detail = cur.fetchall()
+    return detail
+
+def update_employee_name(newName, oldName):
+    print(new_name, oldName)
+    cur.execute("update staff set name='{}' where name='{}'".format(new_name, oldName))
+    conn.commit()
+
+
+def update_employee_password(newPass, oldName):
+    print(newPass, oldName)
+    cur.execute("update staff set pass='{}' where name='{}'".format(newPass, oldName))
+    conn.commit()
+
+
+def update_employee_salary(newSalary, oldName):
+    print(newSalary, oldName)
+    cur.execute("update staff set salary={} where name='{}'".format(newSalary, oldName))
+    conn.commit()
+
+
+def update_employee_position(newPos, oldName):
+    print(newPos, oldName)
+    cur.execute("update staff set position='{}' where name='{}'".format(newPos, oldName))
+    conn.commit()
+
+def get_detail(accNo):
+    cur.execute("select name, balance from bank where acc_no=?", (accNo))
+    details = cur.fetchall()
+    return details
+
+def chekNameInStaff(name):
+    cur = connect.cursor()
+    cur.execute("SELECT name FROM staff")
+    detail = cur.fetchall()
+
+    for i in details:
+        if i[0] == name:
+            return True
+    return False
