@@ -183,7 +183,7 @@ def chekNameInStaff(name):
     cur.execute("SELECT name FROM staff")
     detail = cur.fetchall()
 
-    for i in details:
+    for i in detail:
         if i[0] == name:
             return True
     return False
