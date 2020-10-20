@@ -151,7 +151,7 @@ def showEmployeesForUpdate():
     return detail
 
 def update_employee_name(newName, oldName):
-    print(new_name, oldName)
+    print(newName, oldName)
     cur.execute("update staff set name='{}' where name='{}'".format(new_name, oldName))
     connect.commit()
 
@@ -176,7 +176,7 @@ def update_employee_position(newPos, oldName):
 def get_detail(accNo):
     cur.execute("select name, balance from bank where acc_no=?", (accNo))
     detail = cur.fetchall()
-    return details
+    return detail
 
 def chekNameInStaff(name):
     cur = connect.cursor()
