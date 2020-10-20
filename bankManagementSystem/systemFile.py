@@ -126,7 +126,7 @@ def listAllCustomer():
 
 def deleteAccount(accNo):
     cur.execute("DELETE FROM bank WHERE acc_no=?",(accNo))
-    conn.commit()
+    connect.commit()
 
 def showEmployees():
     cur.execute("SELECT name, salary, position, pass FROM staff")
@@ -153,29 +153,29 @@ def showEmployeesForUpdate():
 def update_employee_name(newName, oldName):
     print(new_name, oldName)
     cur.execute("update staff set name='{}' where name='{}'".format(new_name, oldName))
-    conn.commit()
+    connect.commit()
 
 
 def update_employee_password(newPass, oldName):
     print(newPass, oldName)
     cur.execute("update staff set pass='{}' where name='{}'".format(newPass, oldName))
-    conn.commit()
+    connect.commit()
 
 
 def update_employee_salary(newSalary, oldName):
     print(newSalary, oldName)
     cur.execute("update staff set salary={} where name='{}'".format(newSalary, oldName))
-    conn.commit()
+    connect.commit()
 
 
 def update_employee_position(newPos, oldName):
     print(newPos, oldName)
     cur.execute("update staff set position='{}' where name='{}'".format(newPos, oldName))
-    conn.commit()
+    connect.commit()
 
 def get_detail(accNo):
     cur.execute("select name, balance from bank where acc_no=?", (accNo))
-    details = cur.fetchall()
+    detail = cur.fetchall()
     return details
 
 def chekNameInStaff(name):
