@@ -1,3 +1,5 @@
+# pip install PyQRCode
+
 import pyqrcode
 import PIL
 from pyqrcode import QRCode
