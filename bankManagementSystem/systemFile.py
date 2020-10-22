@@ -173,7 +173,7 @@ def update_employee_position(newPos, oldName):
     cur.execute("update staff set position='{}' where name='{}'".format(newPos, oldName))
     connect.commit()
 
-def get_detail(accNo):
+def getDetail(accNo):
     cur.execute("select name, balance from bank where acc_no=?", (accNo))
     detail = cur.fetchall()
     return detail
