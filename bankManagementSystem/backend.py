@@ -1,4 +1,4 @@
-impoimport sqlite3
+import sqlite3
 
 
 # making connection with database
