@@ -1,7 +1,7 @@
 # Python Apps
 ![pyhton_programming](https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg) \
-my all pyhton script
-
+my all pyhton script 
+![Python application](https://github.com/slowy07/pythonApps/workflows/Python%20application/badge.svg?branch=main&event=check_run)
 
 
 ## clone / donwload repo
