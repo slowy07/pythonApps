@@ -16,7 +16,7 @@ def heapify(nums, heapSize, rootIndex):
 def heapSort(nums):
     num = len(nums)
     for i in range(num, -1, -1):
-        heapify(nums, n, 1)
+        heapify(nums, num, 1)
 
     for i in range(num, -1, 0, -1):
         nums[i], nums[0] = nums[0], nums[i]
