@@ -11,8 +11,8 @@ def encrypt(text, lenght):
         
     return result
 
-text = "zulkrepetes make cpplest and templest ostest"
-lenght = 4
+text = "arfy"
+key = 12
 print("message :", text)
-print("shift pettern :" + str(lenght))
-print("key :", encrypt(text,lenght))
+print("shift pettern :" + str(key))
+print("key :", encrypt(text,key))
