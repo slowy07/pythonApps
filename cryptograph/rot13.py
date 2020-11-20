@@ -7,7 +7,7 @@ def rot13(text):
     return text.translate(rot13trans)
 
 def main():
-    textMessage = "zulkepretes make tmeplest ostest"
+    textMessage = "besok saya pergi ke amerika"
     print("message :",textMessage)
     print(rot13(textMessage))
 
