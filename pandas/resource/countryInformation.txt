@@ -1,0 +1,7 @@
+place_name,population,phone_code
+indonesia,267 million,+62
+united states,382 million,+1
+japan,162 million,+81
+south korea,51 million,+82
+india,1 billion,+92
+germany,83 million,+49
