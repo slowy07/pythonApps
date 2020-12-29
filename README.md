@@ -1,5 +1,5 @@
 # Python Apps
-<img src="https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg" width="600" height="400">
+<img src="https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg" width="900" height="400">
 
 
 ## information
