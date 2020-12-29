@@ -7,11 +7,7 @@ Python is an interpreted, high-level and general-purpose programming language. C
 Python 3.0, released in 2008, was a major revision of the language that is not completely backward-compatible, and much Python 2 code does not run unmodified on Python 3.
 source : [**wikipedia**](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-## clone / donwload repo
+## clone
 ```bash
 git clone https://github.com/slowy07/pythonApps.git
 ```
-
-
-## license
-LICENSE **[MIT LICENSE](https://github.com/slowy07/pythonApps/blob/main/LICENSE)**
