@@ -1,5 +1,5 @@
 # Python Apps
-![pyhton_programming](https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg) 
+<img src="https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg" width="800" height="700">
 
 
 ## information
