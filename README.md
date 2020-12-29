@@ -10,3 +10,7 @@ source : [**wikipedia**](https://en.wikipedia.org/wiki/Python_(programming_langu
 ```bash
 git clone https://github.com/slowy07/pythonApps.git
 ```
+
+
+## license
+LICENSE **[MIT LICENSE](https://github.com/slowy07/pythonApps/blob/main/LICENSE)**
