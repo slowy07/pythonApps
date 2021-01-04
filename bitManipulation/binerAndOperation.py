@@ -1,4 +1,4 @@
-def binaryAnd(a: int, b: int):
+def binaryAnd(a: int, b: int) -> str:
     if a < 0 and b < 0:
         raise ValueError("the value integer mus be positive")
 
