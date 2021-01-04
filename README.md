@@ -1,7 +1,6 @@
 # Python Apps
 [![mitLicense](https://img.shields.io/apm/l/vim-mode?color=green&label=license&logo=pencil&style=for-the-badge)](https://github.com/slowy07/pythonApps/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CI?label=Build&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3ACI)
-[![Continous intergration](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Continuous%20Integration?label=Continuous%20Integration&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3A%22Continuous+Integration%22)
 [![python build](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Python%20application?label=python&logo=python&logoColor=white&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3A%22Continuous+Integration%22)
 
 
