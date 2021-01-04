@@ -1,8 +1,12 @@
 # Python Apps
 
-<img src="https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg" width="900" height="300">\
+<img src="https://www.fintechnews.org/wp-content/uploads/2020/08/1-1.jpg" width="900" height="300">\
 [![mitLicense](https://img.shields.io/apm/l/vim-mode?color=green&label=license&logo=pencil&style=for-the-badge)](https://github.com/slowy07/pythonApps/blob/main/LICENSE)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CI?label=Build&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CI?label=Build&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3ACI)
+[![Continous intergration](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Continuous%20Integration?label=Continuous%20Integration&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3A%22Continuous+Integration%22)
+[![python build](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Python%20application?label=python&logo=python&logoColor=white&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3A%22Continuous+Integration%22)
+
+
 
 ## information
 
