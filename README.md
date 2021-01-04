@@ -2,7 +2,7 @@
 
 <img src="https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg" width="900" height="300">\
 [![mitLicense](https://img.shields.io/apm/l/vim-mode?color=green&label=license&logo=pencil&style=for-the-badge)](https://github.com/slowy07/pythonApps/blob/main/LICENSE)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/build?label=CI&logo=github&style=flat-square)](https://github.com/slowy07/pythonApps/actions)&nbsp
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Build?label=CI&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions)&nbsp
 
 ## information
 
