@@ -1,4 +1,5 @@
 # information about numpy string function
+
 - numpy.strip() = It is used to remove all the leading and trailing spaces from a string.
 - numpy.capitalize() = It converts the first character of a string to capital (uppercase) letter.If the string has its first character as capital, then it returns the original string.
 - numpy.center() = It creates and returns a new string which is padded with the specified character.
@@ -12,10 +13,11 @@
 - numpy.partition() = Partition each element in a around sep.
 - numpy.rpartition = Partition (split) each element around the right-most separator.
 - numpy.rsplit() = For each element in a, return a list of the words in the string, using sep as the delimiter string.
-- numpy.title() = It is used to convert the first character in each word to Uppercase and remaining  characters to Lowercase in string and returns new string.
+- numpy.title() = It is used to convert the first character in each word to Uppercase and remaining characters to Lowercase in string and returns new string.
 - numpy.upper() = Returns the uppercased string from the given string. It converts all lowercase characters to uppercase.If no lowercase characters exist, it returns the original string.
 
 ## numpy function string information
+
 - numpy.find() = It returns the lowest index of the substring if it is found in given string. If its is not found then it returns -1.
 - numpy.index() = It returns the position of the first occurrence of substring in a string
 - numpy.isalpha() = It returns “True” if all characters in the string are alphabets, Otherwise, It returns “False”.
@@ -29,6 +31,7 @@
 - numpy.startswith() = Returns True if a string starts with the given prefix otherwise returns False.
 
 ## string comparison function
+
 - numpy.greater_equal() = It checks whether string1 >= string2 or not.
 - numpy.less_equal() = It checks whether string1 is <= string2 or not.
 - numpy.less() = It check whether string1 is lesser than string2 or not.

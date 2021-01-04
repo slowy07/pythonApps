@@ -1,5 +1,7 @@
 # information about math function numpy
+
 information about function \
+
 - tan() = Compute tangent element-wise.
 - arcsin() = Inverse sine, element-wise.
 - arccos() = Trigonometric inverse cosine, element-wise.
@@ -10,17 +12,19 @@ information about function \
 - deg2rad = Convert angles from degrees to radians.
 - radians() = Convert angles from degrees to radians.
 - hypot() = Given the “legs” of a right triangle, return its hypotenuse.
-- unwrap() = Unwrap by changing deltas between values to 2*pi complement.
+- unwrap() = Unwrap by changing deltas between values to 2\*pi complement.
 - rint() = Round to nearest integer towards zero.
-- fix() =  Round to nearest integer towards zero.
+- fix() = Round to nearest integer towards zero.
 - floor() = Return the floor of the input, element-wise.
 - ceil() = Return the ceiling of the input, element-wise.
 - trunc() = Return the truncated value of the input, element-wise.
 
 ## exponent and logarithm function
+
 information about exponent function
+
 - expm1() = Calculate exp(x) – 1 for all elements in the array.
-- exp2() = Calculate 2**p for all p in the input array.
+- exp2() = Calculate 2\*\*p for all p in the input array.
 - log10() = Return the base 10 logarithm of the input array, element-wise.
 - log2() = Base-2 logarithm of x.
 - log1p() = Return the natural logarithm of one plus the input array, element-wise.
@@ -28,7 +32,9 @@ information about exponent function
 - logaddexp2() = Logarithm of the sum of exponentiations of the inputs in base-2.
 
 ## arithmetic function
+
 information about arithmetic function
+
 - add() = Add arguments element-wise.
 - positive() = Numerical positive, element-wise.
 - negative() = Numerical negative, element-wise.
@@ -43,7 +49,9 @@ information about arithmetic function
 - divmod() = Return element-wise quotient and remainder simultaneously.
 
 ## complex number function
+
 information complex number function
+
 - convolve() = Returns the discrete, linear convolution of two one-dimensional sequences.
 - sqrt() = Return the non-negative square-root of an array, element-wise.
 - square() = Return the element-wise square of the input.
