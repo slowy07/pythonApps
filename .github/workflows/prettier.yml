@@ -22,6 +22,6 @@ jobs:
       uses: creyD/prettier_action@v3.1
       with:
         # This part is also where you can pass other options, for example:
-        prettier_options: --write **/*.{py,md}
+        prettier_options: --write **/*.{py,md,ipynb}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
