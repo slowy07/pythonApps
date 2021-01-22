@@ -10,17 +10,17 @@
 
 ## bot commands
 
-`/mybots` = for checking your bots
-`/newbot` = create a new bot
+- `/mybots` = for checking your bots
+- `/newbot` = create a new bot
 
 ## edit bot
 
-`/setname` = change bot's name
-`/setdescription` = change / create bot's description
-`/setuserpic` = change / create bot's profile picture
-`/deletebot` = delete bot
+- `/setname` = change bot's name
+- `/setdescription` = change / create bot's description
+- `/setuserpic` = change / create bot's profile picture
+- `/deletebot` = delete bot
 
 ## bot setting
 
-`/token` = generate authorization token
-`/revoke` = revoke bot access token
+- `/token` = generate authorization token
+- `/revoke` = revoke bot access token
