@@ -1,0 +1,5 @@
+Inverted Triangle.
+Rhomboid.
+Rectangle.
+Triangle.
+Oval.
