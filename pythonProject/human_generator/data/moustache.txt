@@ -1,0 +1,7 @@
+The Chevron Mustache.
+The English Mustache.
+The Handlebar Mustache.
+The Horseshoe Mustache.
+The Pencil Mustache.
+The Walrus Mustache.
+No Moustache.
