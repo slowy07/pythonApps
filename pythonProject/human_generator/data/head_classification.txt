@@ -1,0 +1,9 @@
+Oblong.
+Rectangle.
+Round.
+Heart.
+Square.
+Inverted Triangle.
+Triangle.
+Diamond.
+Oval.
