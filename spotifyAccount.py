@@ -57,7 +57,7 @@ def creator():
 
     while maxi > created:
         if title == "Linux":
-            system("title "+ f"Spotify Account Created: {created}/{maxi} Errors:{errors}")
+            system(f"Spotify Account Created: {created}/{maxi} Errors:{errors}")
             s = request.session()
 
             email = setRandomName()
