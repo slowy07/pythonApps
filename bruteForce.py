@@ -24,7 +24,6 @@ def findPassword(chars, function, show=50, format_="%s"):
 
 def getChars():
     chars = []
-
     for id_ in range(ord("A"), ord("Z") + 1):
         chars.append(chr(id_))
 
@@ -34,8 +33,6 @@ def getChars():
     return chars
 
 if __name__ == "__main__":
-
-    import datetime
     import time
 
     pw = input("input password : ")
@@ -49,8 +46,6 @@ if __name__ == "__main__":
             return False
     
     chars = getChars()
-
     t = time.process_time()
-    
     password, attemps = findPassword(chars, testFunction, show=1000, format_="trying %s")
     input(f"\n\n Password found :{password} \n attemps: {attemps}\n time: {t} \n")
