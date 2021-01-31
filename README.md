@@ -4,6 +4,13 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CI?label=Build&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3ACI)
 [![python build](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Python%20application?label=python&logo=python&logoColor=white&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3A%22Continuous+Integration%22)
 ![build passing](https://img.shields.io/codefactor/grade/github/slowy07/pythonApps/main?style=for-the-badge)
+![git repo size](https://img.shields.io/github/repo-size/slowy07/pythonApps?style=for-the-badge)
+
+**platform**
+
+![linux](https://img.shields.io/badge/Linux-1793D1?style=for-the-badge&logo=linux&logoColor=white)
+![windows](https://img.shields.io/badge/Windows-003399?style=for-the-badge&logo=windows&logoColor=white)
+![mac](https://img.shields.io/badge/Mac_OS-1793D1?style=for-the-badge&logo=apple&logoColor=white)
 
 ## information about python
 
