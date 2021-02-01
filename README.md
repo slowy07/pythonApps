@@ -8,9 +8,9 @@
 
 **platform**
 
-![linux](https://img.shields.io/badge/Linux-1793D1?style=for-the-badge&logo=linux&logoColor=white)
+![linux](https://img.shields.io/badge/Linux-2c3e50?style=for-the-badge&logo=linux&logoColor=white)
 ![windows](https://img.shields.io/badge/Windows-003399?style=for-the-badge&logo=windows&logoColor=white)
-![mac](https://img.shields.io/badge/Mac_OS-1793D1?style=for-the-badge&logo=apple&logoColor=white)
+![mac](https://img.shields.io/badge/Mac_OS-bdc3c7?style=for-the-badge&logo=apple&logoColor=black)
 
 ## information about python
 
