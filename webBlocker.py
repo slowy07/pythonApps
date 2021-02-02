@@ -13,10 +13,10 @@ while True:
                 if website in content:  
                     pass  
                 else:  
-                    fileptr.write(redirect+"        "+website+"\n")  
+                    fileptr.write(redirect+"    "+website+"\n")  
     else:  
         with open(host_path,'r+') as file:  
-            content = file.readlines();  
+            content = file.readlines() 
             file.seek(0)  
             for line in content:  
                 if not any(website in line for website in websites):  
