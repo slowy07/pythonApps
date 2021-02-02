@@ -1,5 +1,5 @@
-number = map(list(int, input().split))
-oddList = list(i for i in number if i % 2 !=0)
+number = list(map(int, input().split()))
+oddList = [i for i in number if i % 2 !=0]
 print(oddList)
 #exit()
 
