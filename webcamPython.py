@@ -11,7 +11,7 @@ output = cv2.VideoWriter('recording.avi', fourcc, 20.0, (framesWidth, framesHeig
 while True:
     ret, frame = capture.read()
     if ret == True:
-        out.write(frame)
+        output.write(frame)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         cv2.imshow('frame', gray)
         if cv2.waitKey(1) and 0xFF == ord('q'):
@@ -19,5 +19,5 @@ while True:
 
 #CREATE 
 capture.release()
-out.release()
+output.release()
 cv2.destroyAllWindows()
