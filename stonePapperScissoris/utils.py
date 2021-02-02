@@ -16,5 +16,3 @@ def judge(player, computer):
         return 'Lose'
     if player == 2 and computer == 0:
         return 'Lose'
-    else:
-        return 'Win'
