@@ -6,7 +6,7 @@ tData.speed(200)
 
 def getRet(i):
     if i < 10:
-        return
+        pass
     else:
         tData.forward(i)
         tData.left(30)
@@ -15,6 +15,5 @@ def getRet(i):
         getRet(3 * i / 4)
         tData.left(30)
         tData.backward(i)
-
 getRet(100)
 turtle.done()
