@@ -12,10 +12,10 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: ./guessingGame.py test
+          command: ./continueStatement.py test
           name: Test
 
 workflows:
   main:
     jobs:
-      - build
+      - build-and-test
