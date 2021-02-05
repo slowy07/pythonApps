@@ -18,5 +18,5 @@ jobs:
 workflows:
   main:
     jobs:
-      - chmod +x ./
+      - chmod +x ./guessingGame.py
       - build-and-test
