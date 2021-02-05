@@ -1,4 +1,3 @@
-name: automated python test
 on: push
 name: on push
 jobs:
