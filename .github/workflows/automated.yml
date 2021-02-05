@@ -1,5 +1,5 @@
 on: push
-name: on push
+name: python automated test
 jobs:
   gitHubActionForPytest:
     name: GitHub Action for pytest
