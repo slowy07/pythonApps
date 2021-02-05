@@ -1,3 +1,3 @@
-## resturant managament 
+## resturant managament
 
 ![image](./screenshoot.png)
