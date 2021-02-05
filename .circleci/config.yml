@@ -12,12 +12,11 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command:
-            - chmod +x ./guessingGame.py
-            - ./guessingGame.py test
+          command: ./guessingGame.py test
           name: Test
 
 workflows:
   main:
     jobs:
+      - chmod +x ./
       - build-and-test
