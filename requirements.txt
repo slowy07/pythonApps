@@ -16,3 +16,5 @@ sympy
 tensorflow; python_version < '3.9'
 xgboost
 wikipedia
+PyAutoGUI
+pyscreenshot
