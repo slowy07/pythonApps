@@ -15,9 +15,6 @@ def time():
 label = Label(frameWindow, font = ('Calibri', 40, 'bold', 'italic'), bg = 'black', fg='yellow')
 label.pack(anchor = 'center')
 time()
-
-mainloop()
-=======
 label1 = Label(frameWindow, font = ('Arial', 30, 'bold'), bg = 'black', fg = 'white', bd = 30)
 label1.grid(row = 0, column = 1)
 
