@@ -13,10 +13,11 @@ def binerSearch(arr, l, r, x):
     return -1
 
 #main function biner search
-if __name__ == "__nain__":
+if __name__ == "__main__":
     print("Enter array with comma separated in wich element will be searched : ")
     arr = [int(x) for x in input().split(',')]
     x = eval(input("enter the element you want search given array :"))
+
 
     result = binerSearch(arr, 0, len(arr), -1, x)
     
