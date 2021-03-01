@@ -60,8 +60,7 @@ if __name__ == "__main__":
     list2.append(80)
     
     list3 = linkedList()
-
-    list.head = mergeList(list1.head, list2.head)
+    list_dat = mergeList(list1.head, list2.head)
     print("merge linked list is : ", end="")
     list3.printList()
 
