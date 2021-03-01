@@ -32,3 +32,6 @@ def mobiusFunction(number):
 
     else:
         return 0
+
+print(mobiusFunction(25))
+print(primeFactor(120))
