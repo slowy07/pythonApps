@@ -2,7 +2,7 @@ import datetime
 import os
 import shutil
 
-timeToday = datetime.time.today()
+timeToday = datetime.datetime.today()
 setStringDate = timeToday.isoformat()
 
 
