@@ -2,6 +2,7 @@
 
 [![mitLicense](https://img.shields.io/apm/l/vim-mode?color=green&label=license&logo=pencil&style=for-the-badge)](https://github.com/slowy07/pythonApps/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CI?label=Build&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3ACI)
+[![codeql](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CodeQL?label=Code%20QL&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions/workflows/codeql-analysis.yml)
 [![python build](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Python%20application?label=python&logo=python&logoColor=white&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3A%22Continuous+Integration%22)
 ![build passing](https://img.shields.io/codefactor/grade/github/slowy07/pythonApps/main?style=for-the-badge)
 ![git repo size](https://img.shields.io/github/repo-size/slowy07/pythonApps?style=for-the-badge)
