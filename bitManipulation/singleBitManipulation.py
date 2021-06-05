@@ -61,6 +61,10 @@ def is_bit_set(number: int, position: int) -> bool:
     return ((number >> position) & 1) == 1
 
 
+def get_bit(number: int, position: int) -> int:
+    return int((number & (1 << position)) != 0)
+
+
 if __name__ == "__main__":
     import doctest
 
