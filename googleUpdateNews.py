@@ -1,6 +1,13 @@
 from urllib.request import urlopen
 import ssl
+
+"""
+for information about beautifulsoup or how to install check on:
+https://pypi.org/project/beautifulsoup4/
+"""
+
 from bs4 import BeautifulSoup as soup
+
 
 def news(xmlNewsUrl,counter):
     context = ssl._create_unverified_context()
