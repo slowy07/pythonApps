@@ -1,4 +1,5 @@
-import turtle, math, random
+import turtle
+import random
 
 number_of_leaves = 15
 
@@ -11,6 +12,7 @@ def leaf(scale, r, g, b):
         turtle.forward(length)
         turtle.right(1)
     turtle.end_fill()
+
 
 
 def main():
