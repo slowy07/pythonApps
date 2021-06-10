@@ -24,7 +24,6 @@ def set_human(sex):
         print(table.get_string())
     else:
         print("error input")
-        pass
 
 
 name = str(input("name :"))
@@ -34,7 +33,6 @@ contain = False
 for chardata in surename:
     if chardata.isdigit():
         contain = True
-        pass
 if contain is True:
     print("your name have number ?")
 else:
