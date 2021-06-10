@@ -89,7 +89,6 @@ class Client:
             except:
                 print("Error!")
                 self.sock.close()
-                pass
 
 
 client = Client(HOST, PORT)
