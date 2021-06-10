@@ -84,7 +84,7 @@ class BinarySearchTree:
 
     def _search(self, node: Optional[Node], label: int) -> Node:
         if node is None:
-            raise Exception(f"Node with label {label} does not exist")
+            print(f"Node with label {label} does not exist")
         else:
             if label < node.label:
                 node = self._search(node.left, label)
