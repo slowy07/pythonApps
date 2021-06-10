@@ -35,7 +35,7 @@ for chardata in surename:
     if chardata.isdigit():
         contain = True
         pass
-if contain == True:
+if contain is True:
     print("your name have number ?")
 else:
     set_human(sex)
