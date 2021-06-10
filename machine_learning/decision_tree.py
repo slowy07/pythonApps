@@ -1,6 +1,8 @@
 import numpy as np
-from numpy.lib.function_base import average
 
+"""
+from numpy.lib.function_base import average
+"""
 class Decision_Tree:
 
     def __init__(self, depth = 5, min_leaf_size = 5):
