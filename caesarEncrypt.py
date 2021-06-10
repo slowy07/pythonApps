@@ -12,7 +12,7 @@ def encrypt(text, lenght):
     return result
 
 text = input("enter message :")
-key = int(input("enter key to encrypt message: ")
+key = int(input("enter key to encrypt message: "))
 print("message :", text)
 print("shift pettern :" + str(key))
 print("key :", encrypt(text,key))
