@@ -1,5 +1,4 @@
 import PIL
-from PIL import Image
 from tkinter.filedialog import *
 
 file_path=askopenfilenames()
