@@ -92,4 +92,3 @@ if __name__ == '__main__':
             ax.cla()
     except KeyboardInterrupt:
         print(f"keyboard interrup!")
-        pass
