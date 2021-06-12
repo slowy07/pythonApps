@@ -4,7 +4,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CI?label=Build&logo=github&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3ACI)
 [![codeql](https://img.shields.io/github/workflow/status/slowy07/pythonApps/CodeQL?label=Code%20QL&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions/workflows/codeql-analysis.yml)
 [![python build](https://img.shields.io/github/workflow/status/slowy07/pythonApps/Python%20application?label=python&logo=python&logoColor=white&style=for-the-badge)](https://github.com/slowy07/pythonApps/actions?query=workflow%3A%22Continuous+Integration%22)
-![build passing](https://img.shields.io/codefactor/grade/github/slowy07/pythonApps/main?style=for-the-badge)
+[![CodeFactor](https://www.codefactor.io/repository/github/slowy07/pythonapps/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/slowy07/pythonapps)
 ![git repo size](https://img.shields.io/github/repo-size/slowy07/pythonApps?style=for-the-badge)
 
 **platform**
