@@ -22,6 +22,7 @@ def new_generation(cells: list[list[int]], rule: list[int], time: int) ->list[in
         right_neighbour = 0 if i == population - 1 else cells[time][i + 1]
 
         situation = 7 - int(f"{left_neighbour}{cells[time][i]}{right_neighbour}",2)
+        next_generation.append(rule[situation])
 
     return next_generation
 
