@@ -29,7 +29,7 @@ def bfs_shortest_path(graph: dict, start, goal) -> str:
 
     # return path if start is goal
     if start == goal:
-        return "That was easy! Start = goal"
+        return [start]
 
     # keeps looping until all possible paths have been checked
     while queue:
@@ -53,7 +53,7 @@ def bfs_shortest_path(graph: dict, start, goal) -> str:
             explored.add(node)
 
     # in case there's no path between the 2 nodes
-    return "So sorry, but a connecting path doesn't exist :("
+    return []
 
 
 def bfs_shortest_path_distance(graph: dict, start, target) -> int:
@@ -70,7 +70,7 @@ def bfs_shortest_path_distance(graph: dict, start, target) -> int:
         4
         >>> bfs_shortest_path_distance(graph, "A", "A")
         0
-        >>> bfs_shortest_path_distance(graph, "A", "H")
+        >>> bfs_shortest_path_distance(graph, "A", "Unknown")
         -1
     """
     if not graph or start not in graph or target not in graph:
