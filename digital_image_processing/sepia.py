@@ -3,7 +3,6 @@
 """
 
 from cv2 import destroyAllWindows, imread, imshow, waitKey
-import cv2
 
 
 def make_sepia(img, factor: int):
