@@ -1,6 +1,4 @@
 import datetime
-import csv
-
 
 timenow = datetime.datetime.now()
 
