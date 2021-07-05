@@ -54,7 +54,7 @@ def listToVerticalString(list):
 
     return toReturn
 
-class running():
+class running:
 
     def decideOperation():
         userInput = input("pass: ")
@@ -68,17 +68,15 @@ class running():
             print("\n\n")
 
     def run(self):
-        menu = \
-f"""Welcome to the PassGen App!
-Commands:
-    generate password ->
-    <lenght of the password>
-commands to change the characters to be used to generate passwords:
-{list_to_vertical_string(Interface.has_characters.keys())}
-            """
-            print(menu)
-            while True:
-                self.decideOperation()
+        menu = f"""Welcome to the PassGen App!
+        Commands:
+        <generate password ->
+        <lenght of the password>
+        commands to change the characters to be used to generate passwords:{listToVerticalString(interface.has_characters.keys())}"""
+        
+        print(menu)
+    while True:
+        decideOperation()
 
 
 running().run()
