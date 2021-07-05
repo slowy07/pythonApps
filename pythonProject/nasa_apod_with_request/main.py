@@ -3,6 +3,7 @@ from settings import key
 import requests
 import os
 
+
 date = input("enter date (year-month-date) :")
 r = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={key}&date={date}")
 parsed = r.json()
