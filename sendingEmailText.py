@@ -48,6 +48,6 @@ message = part1 + part2 + part3
 try:
    smtpObj = smtplib.SMTP('localhost')
    smtpObj.sendmail(sender, reciever, message)
-   print "Successfully sent email"
+   print("Successfully sent email")
 except Exception:
-   print "Error: unable to send email"
+   print("Error: unable to send email")
