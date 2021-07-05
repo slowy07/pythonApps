@@ -1,7 +1,7 @@
 number1 = 10
 number2 = 30
 
-if a < b:
-    pass
+if number1 < number2:
+    print("number 1 < number 2")
 else:
-    print("B < A")
+    print("number2 > number 1")
