@@ -1,6 +1,5 @@
 import pandas_datareader as pd_reader
 import matplotlib.pyplot as plt
-import mplfinance as mpf
 import datetime as dt
 
 
