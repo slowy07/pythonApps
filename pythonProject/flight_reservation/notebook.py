@@ -2,9 +2,6 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import sqlite3
-import tkinter
-import time
-
 
 window = Tk()
 window.title('airline management system')
