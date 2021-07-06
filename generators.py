@@ -1,7 +1,3 @@
-import sys
-
-
-
 #generators method 1
 def set_gen(x):
     for x in range(x):
