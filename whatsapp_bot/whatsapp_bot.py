@@ -2,7 +2,6 @@ import socket
 import tkinter as tk
 from datetime import datetime
 from time import sleep
-import time
 import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -202,7 +201,6 @@ def orangeSelection(event=None):
                 is_connected()
 
     def Add():
-        import json
         data = {}
 
         message_text = h1.get()  # message you want to send
