@@ -204,7 +204,6 @@ def orangeSelection(event=None):
     def Add():
         import json
         data = {}
-        data1 = []
 
         message_text = h1.get()  # message you want to send
         birth_month = h2.get()
