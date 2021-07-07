@@ -1,7 +1,7 @@
 
 class conversion:
 
-    def __init__(self):
+    def __init__(self, capacity):
         self.top = -1
         self.capacity = capacity
         self.array = []
