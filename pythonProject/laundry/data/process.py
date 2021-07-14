@@ -2,22 +2,24 @@ import datetime
 
 timenow = datetime.datetime.now()
 
+
 class user:
-    def __init__(self, name, information)->str:
+    def __init__(self, name, information) -> str:
         self.name = name
         self.information = information
 
-    def get_username(self) ->str:
+    def get_username(self) -> str:
         return self.name
-    
-    def get_user_information(self) ->str:
+
+    def get_user_information(self) -> str:
         return self.information
-    
+
+
 class laundryinfo:
     def __init__(self):
         self.time = datetime.datetime.now()
 
-    def calculate(self, laundry_weight, type_of_laundry) ->str:
+    def calculate(self, laundry_weight, type_of_laundry) -> str:
         cuci_komplit = 6000
         cuci_kering = 4000
         setrika = 4000
@@ -38,22 +40,21 @@ class laundryinfo:
             type_of_laundry = bed_cover
         elif type_of_laundry == express:
             type_of_laundry = express
-        
+
         total = type_of_laundry * int(laundry_weight)
-        
+
         return int(total)
 
     def get_time(self) -> str:
-        timeNow = self.time.strftime('%H:%M')
-        
-        return f"waktu : {timeNow}"
+        timeNow = self.time.strftime("%H:%M")
 
+        return f"waktu : {timeNow}"
 
 
 def save_data():
     filename = f"laundry_{timenow.strftime('%d-%B-%Y')}.txt"
-    text_information = f"desc :{user.get_user_information()}\nnama : {user.get_username()}\nharga : price\nwaktu: time\n\n"
-    save_data_log = open(filename, 'a')
+    text_information = f"desc :{user.get_user_information()}\nnama : {user.get_username()}\nharga : price\nwaktu: time\n\n" # lgtm [py/call/wrong-arguments]
+    save_data_log = open(filename, "a")
     save_data_log.write(text_information)
     save_data_log.close()
-    print('saved')
+    print("saved")
