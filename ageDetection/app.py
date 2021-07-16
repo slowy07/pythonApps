@@ -1,12 +1,11 @@
 import streamlit as st
-from PIL import Image, ImageEnhance
+from PIL import Image
 import numpy as np
 import cv2
 import os
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
-import detect_mask_image
 
 
 def mask_image():
@@ -14,8 +13,9 @@ def mask_image():
     # load our serialized face detector model from disk
     print("[INFO] loading face detector model...")
     prototxtPath = os.path.sep.join(["face_detector", "deploy.prototxt"])
-    weightsPath = os.path.sep.join(["face_detector",
-                                    "res10_300x300_ssd_iter_140000.caffemodel"])
+    weightsPath = os.path.sep.join(
+        ["face_detector", "res10_300x300_ssd_iter_140000.caffemodel"]
+    )
     net = cv2.dnn.readNet(prototxtPath, weightsPath)
 
     # load the face mask detector model from disk
@@ -28,8 +28,7 @@ def mask_image():
     (h, w) = image.shape[:2]
 
     # construct a blob from the image
-    blob = cv2.dnn.blobFromImage(image, 1.0, (300, 300),
-                                 (104.0, 177.0, 123.0))
+    blob = cv2.dnn.blobFromImage(image, 1.0, (300, 300), (104.0, 177.0, 123.0))
 
     # pass the blob through the network and obtain the face detections
     print("[INFO] computing face detections...")
@@ -78,29 +77,41 @@ def mask_image():
 
             # display the label and bounding box rectangle on the output
             # frame
-            cv2.putText(image, label, (startX, startY - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
+            cv2.putText(
+                image,
+                label,
+                (startX, startY - 10),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.45,
+                color,
+                2,
+            )
             cv2.rectangle(image, (startX, startY), (endX, endY), color, 2)
             RGB_img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+
 mask_image()
+
 
 def mask_detection():
     st.title("Face mask detection")
     activities = ["Image", "Webcam"]
-    st.set_option('deprecation.showfileUploaderEncoding', False)
+    st.set_option("deprecation.showfileUploaderEncoding", False)
     choice = st.sidebar.selectbox("Mask Detection on?", activities)
 
-    if choice == 'Image':
+    if choice == "Image":
         st.subheader("Detection on image")
-        image_file = st.file_uploader("Upload Image", type=['jpg'])  # upload image
+        image_file = st.file_uploader("Upload Image", type=["jpg"])  # upload image
         if image_file is not None:
             our_image = Image.open(image_file)  # making compatible to PIL
-            im = our_image.save('./images/out.jpg')
-            saved_image = st.image(image_file, caption='image uploaded successfully', use_column_width=True)
-            if st.button('Process'):
+            our_image.save("./images/out.jpg")
+            # saved_image = st.image(image_file, caption='image uploaded successfully', use_column_width=True)
+            if st.button("Process"):
                 st.image(RGB_img)
 
-    if choice == 'Webcam':
+    if choice == "Webcam":
         st.subheader("Detection on webcam")
         st.text("This feature will be avilable soon")
+
+
 mask_detection()
