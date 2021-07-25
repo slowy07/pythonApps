@@ -2,7 +2,7 @@ import socket
 import threading
 
 
-HOST = '127.0.0.1'
+HOST = "127.0.0.1"
 PORT = 9090
 
 
@@ -34,26 +34,25 @@ def handle(client):
             nicknames.remove(nickname)
 
 
-
 def receive():
     while True:
         client, address = server.accept()
         print(f"connected with {str(address)}")
-        
+
         client.send("NICK".encode("utf-8"))
 
         nickname = client.recv(1024)
-
 
         nicknames.append(nickname)
         clients.append(client)
 
         print(f"Nickname of client is {str(nickname)}")
-        broadcast(f"Nickname {nickname} connected to server \n".encode('utf-8'))
-        client.send("connected to server".encode('utf-8'))
+        broadcast(f"Nickname {nickname} connected to server \n".encode("utf-8"))
+        client.send("connected to server".encode("utf-8"))
 
-        thread = threading.Thread(target = handle, args = (client,))
+        thread = threading.Thread(target=handle, args=(client,))
         thread.start()
+
 
 print("server running")
 receive()
