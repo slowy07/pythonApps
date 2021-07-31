@@ -2,7 +2,8 @@ def recurFibonaci(number):
     if number <= 1:
         return number
     else:
-        return(recurFibonaci(number-1) + recurFibonaci(number-2))
+        return recurFibonaci(number - 1) + recurFibonaci(number - 2)
+
 
 numberTerms = 10
 if numberTerms <= 0:
