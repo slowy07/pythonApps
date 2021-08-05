@@ -1,7 +1,6 @@
 import time 
 import random
 
-
 name = input("Whats ur name :")
 
 print("hello "+name+"!\ntime to play hangman")

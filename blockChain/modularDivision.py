@@ -48,7 +48,6 @@ def greatest_common_divisor(a: int, b: int) -> int:
 
 if __name__ == "__main__":
     from doctest import testmod
-
     testmod(name="modular_division", verbose=True)
     testmod(name="modular_division2", verbose=True)
     testmod(name="invert_modulo", verbose=True)
