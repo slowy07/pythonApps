@@ -1,4 +1,5 @@
 import numpy as np
+import doctest
 
 """
 The A* algorithm combines features of uniform-cost search and pure
@@ -88,12 +89,12 @@ def astar(world, start, goal):
     world : Object of the world object
     start : Object of the cell as  start position
     stop  : Object of the cell as goal position
-    >>> p = Gridworld()
+    >>> setgridworld = GridWorld()
     >>> start = Cell()
     >>> start.position = (0,0)
     >>> goal = Cell()
     >>> goal.position = (4,4)
-    >>> astar(p, start, goal)
+    >>> astar(setgridworld, start, goal)
     [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]
     """
 
@@ -142,3 +143,4 @@ if __name__ == "__main__":
     for i in s:
         world.w[i] = 1
     print(world.w)
+    doctest.testmod()
