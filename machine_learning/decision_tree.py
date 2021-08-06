@@ -1,11 +1,8 @@
 import numpy as np
 
-"""
-from numpy.lib.function_base import average
-"""
-class Decision_Tree:
 
-    def __init__(self, depth = 5, min_leaf_size = 5):
+class Decision_Tree:
+    def __init__(self, depth=5, min_leaf_size=5):
         self.depth = depth
         self.decision_boundary = 0
         self.left = None
@@ -35,7 +32,7 @@ class Decision_Tree:
         True
         """
         if labels.ndim != 1:
-            print("Error: input labels must be one dimensional")
+            print("Error: Input labels must be one dimensional")
 
         return np.mean((labels - prediction) ** 2)
 
@@ -53,7 +50,7 @@ class Decision_Tree:
         constraints
         """
         if X.ndim != 1:
-            print("Error: inpurt labels must be one dimensional")
+            print("Error: Input data set must be one dimensional")
             return
         if len(X) != len(y):
             print("Error: X and y have different lengths")
@@ -69,10 +66,16 @@ class Decision_Tree:
         if self.depth == 1:
             self.prediction = np.mean(y)
             return
-        
+
         best_split = 0
         min_error = self.mean_squared_error(X, np.mean(y)) * 2
 
+        """
+        loop over all possible splits for the decision tree. find the best split.
+        if no split exists that is less than 2 * error for the entire array
+        then the data set is not split and the average for the entire array is used as
+        the predictor
+        """
         for i in range(len(X)):
             if len(X[:i]) < self.min_leaf_size:
                 continue
@@ -91,7 +94,7 @@ class Decision_Tree:
             left_y = y[:best_split]
             right_X = X[best_split:]
             right_y = y[best_split:]
-            
+
             self.decision_boundary = X[best_split]
             self.left = Decision_Tree(
                 depth=self.depth - 1, min_leaf_size=self.min_leaf_size
@@ -101,10 +104,9 @@ class Decision_Tree:
             )
             self.left.train(left_X, left_y)
             self.right.train(right_X, right_y)
-
         else:
             self.prediction = np.mean(y)
-        
+
         return
 
     def predict(self, x):
@@ -114,7 +116,6 @@ class Decision_Tree:
         the prediction function works by recursively calling the predict function
         of the appropriate subtrees based on the tree's decision boundary
         """
-
         if self.prediction is not None:
             return self.prediction
         elif self.left or self.right is not None:
@@ -123,11 +124,12 @@ class Decision_Tree:
             else:
                 return self.left.predict(x)
         else:
-            print("Error: decision tree not trained")
+            print("Error: Decision tree not yet trained")
             return None
 
 
 class Test_Decision_Tree:
+    """Decision Tres test class"""
 
     @staticmethod
     def helper_mean_squared_error_test(labels, prediction):
@@ -137,12 +139,11 @@ class Test_Decision_Tree:
         @param prediction: a floating point value
         return value: helper_mean_squared_error_test calculates the mean squared error
         """
-
         squared_error_sum = np.float(0)
         for label in labels:
             squared_error_sum += (label - prediction) ** 2
 
-        return np.float(np.squared_error_sum / labels.size)
+        return np.float(squared_error_sum / labels.size)
 
 
 def main():
@@ -155,19 +156,20 @@ def main():
     X = np.arange(-1.0, 1.0, 0.005)
     y = np.sin(X)
 
-    tree = Decision_Tree(depth = 10, min_leaf_size = 10)
+    tree = Decision_Tree(depth=10, min_leaf_size=10)
     tree.train(X, y)
 
     test_cases = (np.random.rand(10) * 2) - 1
     predictions = np.array([tree.predict(x) for x in test_cases])
-    avg_error  = np.mean((predictions - test_cases) ** 2)
+    avg_error = np.mean((predictions - test_cases) ** 2)
 
-    print("Test values : "+ str(test_cases))
-    print("Predictions : "+str(predictions))
-    print("Averange error :"+str(avg_error))
+    print("Test values: " + str(test_cases))
+    print("Predictions: " + str(predictions))
+    print("Average error: " + str(avg_error))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
     import doctest
-    doctest.testmod(name = 'mean_squared_error', verbose = True)
+
+    doctest.testmod(name="mean_squarred_error", verbose=True)
