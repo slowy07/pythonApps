@@ -1,28 +1,30 @@
 from collections import namedtuple
 from typing import List
+import doctest
+
 
 class schedulling:
     def __init__(self, jobs: List[int]) -> None:
         """
-        assign jobs as istance of class schedulling
+        Assign jobs as instance of class Scheduling
         """
         self.jobs = jobs
 
-    def shedule(self, totalJobs:int, deadline:List[int]) -> List[int]:
+    def schedule(self, total_jobs: int, deadline: List[int]) -> List[int]:
         """
         Parameteres  : total_jobs  and list of deadline of jobs
         Returns : List of jobs_id which are profitable  and can be done before
                   deadline
-        >>> a = Scheduling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
+        >>> a = schedulling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
         >>> a.schedule( 3, [3, 4, 5])
         [(1, 2, 20), (2, 33, 30)]
-        >>> a = Scheduling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
+        >>> a = schedulling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
         >>> a.schedule( 4, [13, 2, 33, 16])
         [(1, 2, 20), (2, 33, 30), (3, 16, 40)]
         """
         self.j = [self.jobs[1]]
         self.x = 2
-        while self.x < totalJobs:
+        while self.x < total_jobs:
             self.k = self.j.copy()
             self.k.append(self.jobs[self.x])
             self.x += 1
@@ -31,22 +33,22 @@ class schedulling:
 
         return self.j
 
-    def feasible(self, profitJobs:List[int], deadline:List[int]) -> bool:
+    def feasible(self, profit_jobs: List[int], deadline: List[int]) -> bool:
         """
         Parameters : list of current profitable jobs within deadline
                      list of deadline of jobs
         Returns : true if k[-1] job is profitable to us else false
-        >>> a = Scheduling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
+        >>> a = schedulling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
         >>> a.feasible( [0], [2, 13, 16, 33] )
         True
-        >>> a = Scheduling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
+        >>> a = schedulling([(0, 13, 10),(1, 2, 20),(2, 33, 30),(3, 16, 40)])
         >>> a.feasible([0], [2, 13, 16, 33] )
         True
         """
 
-        self.tmp = profitJobs
-        self.isFeasible = True
-        
+        self.tmp = profit_jobs
+        self.is_feasible = True
+
         i = 0
         j = 1
         k = 0
@@ -66,20 +68,20 @@ class schedulling:
         while k < len(self.tmp):
             self.job = self.tmp[k]
             if self.job in self.jobs:
-                self.jobIndex = self.jobs.index(self.job)
+                self.jobindex = self.jobs.index(self.job)
             else:
-                self.jobInde = 0
-            self.dlineval = deadline[self.jobIndex]
+                self.jobindex = 0
+            self.dlineval = deadline[self.jobindex]
             self.ftest = k + 1
             k += 1
             if self.dlineval < self.ftest:
-                self.isFeasible = False
+                self.is_feasible = False
                 break
+        return self.is_feasible
 
-        return self.isFeasible
 
 def main():
-    job = namedtuple("job","job_id is deadline profit")
+    job = namedtuple("job", "job_id deadline profit")
     jobs = [
         job(0, 0, 0),
         job(1, 2, 46),
@@ -89,30 +91,30 @@ def main():
         job(5, 2, 56),
         job(6, 1, 40),
     ]
-
-    midResult = []
+    # midresult stores jobs in sorting order of deadline
+    midresult = []
     for i in range(len(jobs)):
-        currentJob = []
-        currentJob.extend((jobs[i].deadline, jobs[i].profit, jobs[i].job_id))
-        midResult.append(currentJob)
-    midResult.sort(key=lambda k: (k[0],-k[1]))
-    (deadline, profit, jobs) = map(list, zip(*midResult))
-    
-    schedullingJobs = schedulling(jobs)
-    scheduledJobs = schedullingJobs.schedule(len(jobs), deadline)
-    print(f"\n jobs{scheduledJobs}")
-    
-    finalProfit = []
+        current_job = []
+        current_job.extend((jobs[i].deadline, jobs[i].profit, jobs[i].job_id))
+        midresult.append(current_job)
+    midresult.sort(key=lambda k: (k[0], -k[1]))
+    (deadline, profit, jobs) = map(list, zip(*midresult))
+
+    scheduling_jobs = schedulling(jobs)
+    scheduled_jobs = scheduling_jobs.schedule(len(jobs), deadline)
+    print(f"\n Jobs {scheduled_jobs}")
+
+    finalprofit = []
     finaldl = []
 
-    for i, item in enumerate(scheduledJobs):
+    for i, item in enumerate(scheduled_jobs):
         jobsindex = jobs.index(item)
-        finalProfit.append(profit[jobsindex])
+        finalprofit.append(profit[jobsindex])
         finaldl.append(deadline[jobsindex])
 
-    print(f"\n profit {finalProfit}")
-    print(f"\n deadline {finaldl}")
+    print(f"\n Profit {finalprofit}")
+    print(f"\n Deadline {finaldl}")
 
 
-if __name__== "__main__":
-    main()
+if __name__ == "__main__":
+    doctest.testmod()
