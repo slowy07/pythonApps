@@ -34,5 +34,5 @@ def set_num(number: int):
     return primes[number]
 
 if __name__ == "__main__":
-    print(set_num(10000))
-    print(set_num(100))
+    import doctest
+    doctest.testmod()
