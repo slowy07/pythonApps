@@ -36,6 +36,7 @@ def get_answ(row: int, columns: int):
     """
     return value of 20x20 grid
     >>> get_answ(20, 20)
+    70600674
     """
     current_product = 0
     current_numbers = 0
