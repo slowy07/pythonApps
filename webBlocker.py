@@ -14,7 +14,8 @@ while True:
                 pass
                 print("web was blocked")
             else:
-                print(f"blocking website {a for a in websites}")
+                for web_info in websites:
+                    print(f"blocking {web_info}")
                 fileptr.write(redirect+"    "+website+"\n")  
     # else:
     #     with open(host_path,'r+') as file:  
