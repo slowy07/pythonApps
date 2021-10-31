@@ -2,16 +2,16 @@ import math
 from typing import Callable
 
 
-def intersection(function: Callable[[float], float], x0: float, x1: float) -> float:
+def intersection(function: Callable[[float], float], num1: float, num2: float) -> float:
     """
-    function is the f we want to find its root
-    x0 and x1 are two random starting points
-    >>> intersection(lambda x: x ** 3 - 1, -5, 5)
+    fungsinya adalah f kita ingin mencari akarnya
+    x0 dan x1, adalah 2 random starting point
+    >>> intersection(lambda x: x** 3 - 1, -5, 5)
     0.9999999999954654
-    >>> intersection(lambda x: x ** 3 - 1, 5, 5)
+    >>> intersection(lambda x: x** 3 - 1, 5, 5)
     Traceback (most recent call last):
     ...
-    ZeroDivisionError: float division by zero, could not find root
+    ZeroDivisionError: tidak bisa dibagikan dengan 0, tidak menemukan akar
     >>> intersection(lambda x: x ** 3 - 1, 100, 200)
     1.0000000000003888
     >>> intersection(lambda x: x ** 2 - 4 * x + 3, 0, 2)
@@ -25,20 +25,24 @@ def intersection(function: Callable[[float], float], x0: float, x1: float) -> fl
     >>> intersection(math.cos, -math.pi, math.pi)
     Traceback (most recent call last):
     ...
-    ZeroDivisionError: float division by zero, could not find root
+    ZeroDivisionError: tidak bisa dibagikan dengan 0, tidak menemukan akar
     """
-    x_n: float = x0
-    x_n1: float = x1
+    x_number1: float = num1
+    x_number2: float = num2
+
     while True:
-        if x_n == x_n1 or function(x_n1) == function(x_n):
-            raise ZeroDivisionError("float division by zero, could not find root")
-        x_n2: float = x_n1 - (
-            function(x_n1) / ((function(x_n1) - function(x_n)) / (x_n1 - x_n))
+        if x_number1 == x_number2 or function(x_number2) == function(x_number1):
+            raise ZeroDivisionError(
+                "tidak bisa dibagikan dengan 0, tidak menemukan akar"
+            )
+        x_number3: float = x_number2 - (
+            function(x_number2)
+            / ((function(x_number2) - function(x_number1)) / (x_number2 - x_number1))
         )
-        if abs(x_n2 - x_n1) < 10 ** -5:
-            return x_n2
-        x_n = x_n1
-        x_n1 = x_n2
+        if abs(x_number3 - x_number2) < 10 ** -5:
+            return x_number3
+        x_number1 = x_number2
+        x_number2 = x_number3
 
 
 def f(x: float) -> float:
@@ -46,4 +50,7 @@ def f(x: float) -> float:
 
 
 if __name__ == "__main__":
-    print(intersection(f, 3, 3.5))
+    import doctest
+
+    doctest.testmod()
+    # print(intersection(f, 3, 3.5))

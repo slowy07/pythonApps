@@ -1,11 +1,11 @@
 import numpy as np
 
 
-def retroactive_resolution(coefficients: np.matrix, vector: np.array) -> np.array:
+def retroactive_resolution(coefficients: np.matrix, vector: np.ndarray) -> np.ndarray:
     """
-    This function performs a retroactive linear system resolution
-        for triangular matrix
-    Examples:
+    Fungsi ini melakukan resolusi sistem linier retroaktif
+    untuk matriks segitiga
+    contoh:
         2x1 + 2x2 - 1x3 = 5         2x1 + 2x2 = -1
         0x1 - 2x2 - 1x3 = -7        0x1 - 2x2 = -1
         0x1 + 0x2 + 5x3 = 15
@@ -31,10 +31,10 @@ def retroactive_resolution(coefficients: np.matrix, vector: np.array) -> np.arra
     return x
 
 
-def gaussian_elimination(coefficients: np.matrix, vector: np.array) -> np.array:
+def gaussian_elimination(coefficients: np.matrix, vector: np.ndarray) -> np.ndarray:
     """
-    This function performs Gaussian elimination method
-    Examples:
+    Fungsi ini melakukan metode eliminasi Gaussian
+    contoh:
         1x1 - 4x2 - 2x3 = -2        1x1 + 2x2 = 5
         5x1 + 2x2 - 2x3 = -3        5x1 + 2x2 = 5
         1x1 - 1x2 + 0x3 = 4
@@ -46,16 +46,14 @@ def gaussian_elimination(coefficients: np.matrix, vector: np.array) -> np.array:
     array([[0. ],
            [2.5]])
     """
-    # coefficients must to be a square matrix so we need to check first
     rows, columns = np.shape(coefficients)
     if rows != columns:
-        return []
+        return np.array((), dtype=float)
 
     # augmented matrix
     augmented_mat = np.concatenate((coefficients, vector), axis=1)
     augmented_mat = augmented_mat.astype("float64")
 
-    # scale the matrix leaving it triangular
     for row in range(rows - 1):
         pivot = augmented_mat[row, row]
         for col in range(row + 1, columns):

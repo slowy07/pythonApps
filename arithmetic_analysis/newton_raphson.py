@@ -1,14 +1,20 @@
+# Metode Newton-Raphson adalah metode pencarian akar suatu fungsi
+# f(x) dengan pendekatan satu titik,
+# dimana fungsi f(x) mempunyai turunan.
+# Metode ini dianggap lebih mudah dari Metode Bagi-Dua (Bisection Method),
+# karena metode ini menggunakan pendekatan satu titik sebagai titik awal.
+
+from __future__ import annotations
+
 from decimal import Decimal
 from math import *  # noqa: F401, F403
-from typing import Union
 
 from sympy import diff
 
 
-def newton_raphson(
-    func: str, a: Union[float, Decimal], precision: float = 10 ** -10
-) -> float:
-    """Finds root from the point 'a' onwards by Newton-Raphson method
+def newton_raphson(func: str, a: float | Decimal, pres: float = 10 ** -10) -> float:
+    """
+    Menemukan akar dari titik 'a' dan seterusnya dengan metode Newton-Raphson
     >>> newton_raphson("sin(x)", 2)
     3.1415926536808043
     >>> newton_raphson("x**2 - 5*x +2", 0.4)
@@ -21,19 +27,11 @@ def newton_raphson(
     x = a
     while True:
         x = Decimal(x) - (Decimal(eval(func)) / Decimal(eval(str(diff(func)))))
-        # This number dictates the accuracy of the answer
-        if abs(eval(func)) < precision:
+        if abs(eval(func)) < pres:
             return float(x)
 
 
-# Let's Execute
 if __name__ == "__main__":
-    # Find root of trigonometric function
-    # Find value of pi
-    print(f"The root of sin(x) = 0 is {newton_raphson('sin(x)', 2)}")
-    # Find root of polynomial
-    print(f"The root of x**2 - 5*x + 2 = 0 is {newton_raphson('x**2 - 5*x + 2', 0.4)}")
-    # Find Square Root of 5
-    print(f"The root of log(x) - 1 = 0 is {newton_raphson('log(x) - 1', 2)}")
-    # Exponential Roots
-    print(f"The root of exp(x) - 1 = 0 is {newton_raphson('exp(x) - 1', 0)}")
+    import doctest
+
+    doctest.testmod()
