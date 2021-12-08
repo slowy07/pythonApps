@@ -1,5 +1,6 @@
 from itertools import product
 
+
 def findPassword(chars, function, show=50, format_="%s"):
     password = None
     attemps = 0
@@ -19,8 +20,9 @@ def findPassword(chars, function, show=50, format_="%s"):
             else:
                 attemps += 1
         size += 1
-    
+
     return password, attemps
+
 
 def getChars():
     chars = []
@@ -29,8 +31,9 @@ def getChars():
 
     for number in range(10):
         chars.append(str(number))
-    
+
     return chars
+
 
 if __name__ == "__main__":
     import time
@@ -44,8 +47,10 @@ if __name__ == "__main__":
             return True
         else:
             return False
-    
+
     chars = getChars()
     t = time.process_time()
-    password, attemps = findPassword(chars, testFunction, show=1000, format_="trying %s")
+    password, attemps = findPassword(
+        chars, testFunction, show=1000, format_="trying %s"
+    )
     input(f"\n\n Password found :{password} \n attemps: {attemps}\n time: {t} \n")

@@ -1,4 +1,3 @@
-
 def binaryXor(a: int, b: int):
     if a < 0 or b < 0:
         raise Exception("input must integer positive")
@@ -12,6 +11,8 @@ def binaryXor(a: int, b: int):
         for charA, charB in zip(aBinary.zfill(maxLength), bBinary.zfill(maxLength))
     )
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.main()

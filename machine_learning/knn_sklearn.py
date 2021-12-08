@@ -10,10 +10,10 @@ print(f"Target name : \n {iris.target_names}")
 print(f"\nFeatures: \n {iris.feature_names}")
 
 X_train, X_test, y_train, y_test = train_test_split(
-    iris["data"], iris["target"], random_state = 4
+    iris["data"], iris["target"], random_state=4
 )
 
-knn = KNeighborsClassifier(n_neighbors = 1)
+knn = KNeighborsClassifier(n_neighbors=1)
 knn.fit(X_train, y_train)
 
 X_new = [[1, 2, 1, 4], [2, 3, 4, 5]]

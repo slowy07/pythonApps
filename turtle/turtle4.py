@@ -1,7 +1,10 @@
 from turtle import *
-color('purple','pink')
+
+color("purple", "pink")
+
+
 def draw():
-    color('red', 'black')
+    color("red", "black")
     left(60)
     forward(100)
     left(60)

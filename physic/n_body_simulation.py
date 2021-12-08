@@ -12,7 +12,8 @@ class Body:
         velocity_y: float,
         mass: float = 1.0,
         size: float = 1.0,
-        color: str = "blue",) -> None:
+        color: str = "blue",
+    ) -> None:
 
         self.position_x = position_x
         self.position_y = position_y
@@ -31,7 +32,9 @@ class Body:
     def velocity(self) -> tuple[float, float]:
         return self.velocity_x, self.velocity_y
 
-    def update_velocity(self, force_x: float, force_y: float, delta_time: float) -> None:
+    def update_velocity(
+        self, force_x: float, force_y: float, delta_time: float
+    ) -> None:
         """
         Euler algorithm for velocity
         >>> body_1 = Body(0.,0.,0.,0.)
@@ -76,13 +79,13 @@ class Body:
 
 
 class Body_System:
-
     def __init__(
         self,
         bodies: list[Body],
         gravitation_constant: float = 1.0,
         time_factor: float = 1.0,
-        softening_factor: float = 0.0,) -> None:
+        softening_factor: float = 0.0,
+    ) -> None:
 
         self.bodies = bodies
         self.gravitation_constant = gravitation_constant
@@ -120,16 +123,25 @@ class Body_System:
                     dif_x = body2.position_x - body1.position_x
                     dif_y = body2.position_x - body1.position_y
 
-                    distance = (dif_x ** 2 + dif_y ** 2 + self.softening_factor) ** (1 / 2)
-                    force_x += (self.gravitation_constant * body2.mass * dif_x / distance ** 3)
-                    force_y += (self.gravitation_constant * body2.mass * dif_y / distance ** 3)
+                    distance = (dif_x ** 2 + dif_y ** 2 + self.softening_factor) ** (
+                        1 / 2
+                    )
+                    force_x += (
+                        self.gravitation_constant * body2.mass * dif_x / distance ** 3
+                    )
+                    force_y += (
+                        self.gravitation_constant * body2.mass * dif_y / distance ** 3
+                    )
 
             body1.update_velocity(force_x, force_y, delta_time * self.time_factor)
-        
+
         for body in self.bodies:
             body.update_position(delta_time * self.time_factor)
 
-def update_step(body_system: Body_System, delta_time: float, patches: list[plt.Circle]) -> None:
+
+def update_step(
+    body_system: Body_System, delta_time: float, patches: list[plt.Circle]
+) -> None:
     """
     Updates the body-system and applies the change to the patch-list used for plotting
     >>> body_system_1 = BodySystem([Body(0,0,0,0), Body(10,0,0,0)])
@@ -145,10 +157,11 @@ def update_step(body_system: Body_System, delta_time: float, patches: list[plt.C
     >>> patches_2[0].center
     (-9.0, 0.0)
     """
-    
+
     body_system.update_system(delta_time)
-    for patch,body in zip(patches, body_system.bodies):
+    for patch, body in zip(patches, body_system.bodies):
         patch.center = (body.position_x, body.position_y)
+
 
 def plot(
     title: str,
@@ -156,8 +169,9 @@ def plot(
     x_start: float = -1,
     x_end: float = 1,
     y_start: float = -1,
-    y_end: float = 1,) -> None:
-    
+    y_end: float = 1,
+) -> None:
+
     """
     Utility function to plot how the given body-system evolves over time.
     No doctest provided since this function does not have a return value.
@@ -168,25 +182,22 @@ def plot(
 
     fig = plt.figure()
     fig.canvas.set_window_title(title)
-    
-    ax = plt.axes(
-        xlim = (x_start, x_end), ylim =(y_start, y_end)
-    )
+
+    ax = plt.axes(xlim=(x_start, x_end), ylim=(y_start, y_end))
     plt.gca().set_aspect("equal")
 
     patches = [
-        plt.Circle((body.position_x, body.position_y), body.size, fc = body.color)
+        plt.Circle((body.position_x, body.position_y), body.size, fc=body.color)
         for body in body_system.bodies
     ]
 
     for patch in patches:
         ax.add_patch(patch)
 
-
     def update(frame: int) -> list[plt.Circle]:
         update_step(body_system, DELTA_TIME, patches)
         return patches
-    
+
     """
     anim = animation.FuncAnimation(
         fig, update, interval = INTERVAL, blit = True
@@ -279,7 +290,7 @@ def example_3() -> Body_System:
     return Body_System(bodies, 0.01, 10, 0.1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     plot("Figure-8 solution to the 3-body-problem", example_1(), -2, 2, -2, 2)
     plot(
         "Moon's orbit around the earth",

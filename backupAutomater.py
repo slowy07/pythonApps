@@ -8,10 +8,12 @@ setStringDate = timeToday.isoformat()
 
 configDir = os.getenv("my_config")
 dropbox = os.getenv("dropbox")
-configFile = 'services.conf'
+configFile = "services.conf"
 cofigFilename = os.path.join(configDir, configFile)
-sourceDir = os.path.expanduser('~/Library/Services/')
-destinationDir = os.path.join(dropbox, "myBackups"+"/"+"AutomaterServices"+setStringDate+"/")
+sourceDir = os.path.expanduser("~/Library/Services/")
+destinationDir = os.path.join(
+    dropbox, "myBackups" + "/" + "AutomaterServices" + setStringDate + "/"
+)
 
 for detFilename in open(cofigFilename):
     fileName = detFilename.strip()

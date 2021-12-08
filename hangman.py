@@ -1,24 +1,24 @@
-import time 
+import time
 import random
 
 name = input("Whats ur name :")
 
-print("hello "+name+"!\ntime to play hangman")
+print("hello " + name + "!\ntime to play hangman")
 time.sleep(1)
 
 print("time to guess, \n Hint:its Fruit!")
 time.sleep(0.5)
 
-keyWord = '''apple banana mango strawberry 
+keyWord = """apple banana mango strawberry 
 orange rambutan pineapple lemon coconut watermelon 
 melon cherry papaya berry peach lychee muskmelon
 pear starfruit
-'''
+"""
 
-keyWord = keyWord.split(' ')
+keyWord = keyWord.split(" ")
 word = random.choice(keyWord)
 
-guesses = ''
+guesses = ""
 turns = 5
 
 while turns > 0:
@@ -26,9 +26,9 @@ while turns > 0:
 
     for char in word:
         if char in guesses:
-            print(char, end=' ')
+            print(char, end=" ")
         else:
-            print("_", end=' ')
+            print("_", end=" ")
 
             failed += 1
 
@@ -54,7 +54,6 @@ while turns > 0:
         turns -= 1
         print("wrong !")
 
-
-        print("you have ",+turns,'more guesses \n')
+        print("you have ", +turns, "more guesses \n")
         if turns == 0:
             print("you lose")

@@ -18,11 +18,11 @@ class Solution(object):
                 if start == curr:
                     break
             start += 1
-        
+
         # sol 2
         # while k > 0:
         #     nums.insert(0, nums.pop())
         #     k -= 1
-        
+
         # sol 3
         # nums[:] = nums[len(nums) - k:] + nums[:len(nums) - k]

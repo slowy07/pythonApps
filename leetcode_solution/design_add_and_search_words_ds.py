@@ -1,10 +1,13 @@
 class Trie(object):
     def __init__(self, endOfWord=False):
-        self.child = [None]*26
+        self.child = [None] * 26
         self.endOfWord = endOfWord
+
+
 class WordDictionary:
     def index(self, c):
-        return ord(c)-97
+        return ord(c) - 97
+
     def __init__(self):
         self.root = Trie()
 
@@ -19,21 +22,21 @@ class WordDictionary:
     def search(self, word: str) -> bool:
         node = self.root
         return self.f(word, node, 0)
-    
+
     def f(self, word, node, pos):
         if node == None:
             return False
         ans = False
         if pos == len(word):
             return node.endOfWord
-        if word[pos] == '.':
+        if word[pos] == ".":
             for i in range(26):
-                ans = ans or self.f(word, node.child[i], pos+1)
+                ans = ans or self.f(word, node.child[i], pos + 1)
         else:
             if node.child[self.index(word[pos])] == None:
                 ans = False
             else:
-                ans = self.f(word, node.child[self.index(word[pos])], pos+1)
+                ans = self.f(word, node.child[self.index(word[pos])], pos + 1)
         return ans
 
 

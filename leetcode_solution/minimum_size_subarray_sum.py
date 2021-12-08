@@ -14,5 +14,5 @@ class Solution(object):
                 min_size = min(min_size, i - start + 1)
                 sums -= nums[start]
                 start += 1
-        
+
         return min_size if min_size != float("inf") else 0

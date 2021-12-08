@@ -16,12 +16,12 @@ class Solution(object):
             if cur:
                 s.append(cur)
                 cur = cur.left
-                
+
             else:
                 cur = s.pop()
                 rank += 1
                 if rank == k:
                     return cur.val
                 cur = cur.right
-                
+
         return float("-inf")

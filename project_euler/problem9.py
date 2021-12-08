@@ -10,6 +10,7 @@ Find the product abc.
 
 import numpy
 
+
 def find_triplet(rangenum: int, thousand: int):
     """
     get summary
@@ -19,10 +20,12 @@ def find_triplet(rangenum: int, thousand: int):
     for a in range(1, rangenum):
         for b in range(1, rangenum):
             c = numpy.sqrt(a ** 2 + b ** 2)
-            
+
             if a + b + c == thousand:
                 return int(a * b * c)
 
+
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

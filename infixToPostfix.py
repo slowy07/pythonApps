@@ -1,13 +1,10 @@
-
 class conversion:
-
     def __init__(self, capacity):
         self.top = -1
         self.capacity = capacity
         self.array = []
         self.output = []
-        self.predence = {'+':1, '-':1, '*':2, '/':2, '^':3}
-
+        self.predence = {"+": 1, "-": 1, "*": 2, "/": 2, "^": 3}
 
     def isEmpty(self):
         return True if self.top == -1 else False
@@ -21,14 +18,14 @@ class conversion:
             return self.array.pop()
         else:
             return "$"
-    
+
     def push(self, op):
         self.top += 1
         self.array.append(op)
 
     def isOperand(self, ch):
         return ch.isalpha()
-    
+
     def notGreater(self, i):
         try:
             a = self.predence[i]
@@ -41,25 +38,26 @@ class conversion:
         for i in exp:
             if self.isOperand(i):
                 self.output.append(i)
-            elif i == '(':
+            elif i == "(":
                 self.push(i)
-            elif i == ')':
-                while ((not self.isEmpty()) and self.peek() != '('):
+            elif i == ")":
+                while (not self.isEmpty()) and self.peek() != "(":
                     a = self.pop()
                     self.output.append(a)
-                if (not self.isEmpty() and self.peek() != '('):
+                if not self.isEmpty() and self.peek() != "(":
                     return -1
                 else:
                     self.pop()
 
             else:
-                while (not self.isEmpty() and self.notGreater(i)):
+                while not self.isEmpty() and self.notGreater(i):
                     self.output.append(self.pop())
                 self.push(i)
         while not self.isEmpty():
             self.output.append(self.pop())
-        
+
         print("".join(self.output))
+
 
 exp = "a+b*(c^d-e)^(f+g*h)-i"
 obj = conversion(len(exp))

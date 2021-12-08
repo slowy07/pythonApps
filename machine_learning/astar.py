@@ -14,6 +14,7 @@ essentially planning ahead at each step so a more optimal decision
 is made.A* also known as the algorithm with brains
 """
 
+
 class Cell:
 
     """
@@ -26,8 +27,9 @@ class Cell:
     which can be any function. for simplicity used line
     distance
     """
+
     def __init__(self):
-        self.position = (0,0)
+        self.position = (0, 0)
         self.parent = None
 
         self.g = 0
@@ -36,7 +38,7 @@ class Cell:
 
     def __eq__(self, cell):
         return self.position == cell.position
-    
+
     def showcell(self):
         print(self.position)
 
@@ -48,7 +50,7 @@ class GridWorld:
     world_size: create a numpy array with the given world_size default is 5
     """
 
-    def __init__(self, world_size = (5,5)):
+    def __init__(self, world_size=(5, 5)):
         self.w = np.zeros(world_size)
         self.world_x_limit = world_size[0]
         self.world_y_limit = world_size[1]
@@ -75,13 +77,14 @@ class GridWorld:
             x = current_x + n[0]
             y = current_y + n[1]
 
-            if 0 <= x < self.world_x_limit and 0<= y < self.world_y_limit:
+            if 0 <= x < self.world_x_limit and 0 <= y < self.world_y_limit:
                 c = Cell()
-                c.position = (x,y)
+                c.position = (x, y)
                 c.parent = cell
                 neighbours.append(c)
 
         return neighbours
+
 
 def astar(world, start, goal):
     """
@@ -113,7 +116,7 @@ def astar(world, start, goal):
                 if c == n:
                     continue
             n.g = current.g + 1
-            x1, y1 = n.position 
+            x1, y1 = n.position
             x2, y2 = goal.position
             n.h = (y2 - y1) ** 2 + (x2 - x1) ** 2
             n.f = n.h + n.g
@@ -122,7 +125,7 @@ def astar(world, start, goal):
                 if c == n and c.f < n.f:
                     continue
             _open.append(n)
-    
+
     path = []
     while current.parent is not None:
         path.append(current.position)
@@ -134,9 +137,9 @@ def astar(world, start, goal):
 if __name__ == "__main__":
     world = GridWorld()
     start = Cell()
-    start.position = (0,0)
+    start.position = (0, 0)
     goal = Cell()
-    goal.position = (4,4)
+    goal.position = (4, 4)
     print(f"path from {start.position} to {goal.position}")
     s = astar(world, start, goal)
 

@@ -70,7 +70,11 @@ if __name__ == "__main__":
 
     # the list of tasks that can be done by M persons.
     task_performed = [[1, 3, 4], [1, 2, 5], [3, 4]]
-    print(AssignmentUsingBitmask(task_performed, total_tasks).countNoOfWays(task_performed))
+    print(
+        AssignmentUsingBitmask(task_performed, total_tasks).countNoOfWays(
+            task_performed
+        )
+    )
     """
     For the particular example the tasks can be distributed as
     (1,2,3), (1,2,4), (1,5,3), (1,5,4), (3,1,4),

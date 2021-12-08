@@ -602,4 +602,6 @@ def binary_search_tree_example() -> None:
 
     print("Max. label:", t.get_max_label())
     print("Min. label:", t.get_min_label())
+
+
 binary_search_tree_example()

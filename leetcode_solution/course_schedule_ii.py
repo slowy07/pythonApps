@@ -1,4 +1,6 @@
 import collections
+
+
 class Solution(object):
     def findOrder(self, numCourses, prerequisites):
         """
@@ -11,10 +13,10 @@ class Solution(object):
         for i, j in prerequisites:
             in_degree[i].add(j)
             out_degree[j].add(i)
-        
+
         stk = [i for i in xrange(numCourses) if i not in in_degree]
-        result  = []
-        
+        result = []
+
         while stk:
             node = stk.pop()
             result.append(node)
@@ -23,7 +25,7 @@ class Solution(object):
                 if not in_degree[i]:
                     stk.append(i)
                     del in_degree[i]
-                    
+
             del out_degree[node]
-            
-        return result if not in_degree  and not out_degree else []
+
+        return result if not in_degree and not out_degree else []

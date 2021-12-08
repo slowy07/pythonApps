@@ -10,12 +10,12 @@ fo = open(filename, "rb")
 filecontent = fo.read()
 encodedcontent = base64.b64encode(filecontent)  # base64
 
-sender = 'senderEmail@mail.com'
-reciever = 'receiver@mail.com'
+sender = "senderEmail@mail.com"
+reciever = "receiver@mail.com"
 
 marker = "ZULKPERETES"
 
-body ="""
+body = """
 This is a test email to send an attachement.
 """
 # Define the main headers.
@@ -25,7 +25,10 @@ Subject: Sending Attachement
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary=%s
 --%s
-""" % (marker, marker)
+""" % (
+    marker,
+    marker,
+)
 
 # Define the message action
 part2 = """Content-Type: text/plain
@@ -33,7 +36,10 @@ Content-Transfer-Encoding:8bit
 
 %s
 --%s
-""" % (body,marker)
+""" % (
+    body,
+    marker,
+)
 
 # Define the attachment section
 part3 = """Content-Type: multipart/mixed; name=\"%s\"
@@ -42,12 +48,17 @@ Content-Disposition: attachment; filename=%s
 
 %s
 --%s--
-""" %(filename, filename, encodedcontent, marker)
+""" % (
+    filename,
+    filename,
+    encodedcontent,
+    marker,
+)
 message = part1 + part2 + part3
 
 try:
-   smtpObj = smtplib.SMTP('localhost')
-   smtpObj.sendmail(sender, reciever, message)
-   print("Successfully sent email")
+    smtpObj = smtplib.SMTP("localhost")
+    smtpObj.sendmail(sender, reciever, message)
+    print("Successfully sent email")
 except Exception:
-   print("Error: unable to send email")
+    print("Error: unable to send email")

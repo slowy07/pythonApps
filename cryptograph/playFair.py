@@ -5,11 +5,13 @@ import sys
 
 alphabet = "abcdefghijlmnopqrstuvwxyz".upper()
 
+
 def vetorize(text):
     listText = []
     for letter in text:
         listText.append(letter)
     return listText
+
 
 def normalizeMessage(text):
     newText = []
@@ -43,6 +45,7 @@ def normalizeMessage(text):
             newText.append("X")
     return newText
 
+
 def createMatrix():
     matrix = []
     for i in range(5):
@@ -50,6 +53,7 @@ def createMatrix():
         for j in range(5):
             matrix[i].append("")
     return matrix
+
 
 def mountGrid(matrix, key, alphabet):
     alphabet = vetorize(alphabet)
@@ -60,7 +64,7 @@ def mountGrid(matrix, key, alphabet):
         if letter in alphabet:
             alphabet.remove(letter)
             matrix[line][column] = letter
-            pos += 1     
+            pos += 1
     while len(alphabet) > 0:
         line = pos / 5
         column = pos % 5
@@ -68,11 +72,13 @@ def mountGrid(matrix, key, alphabet):
         pos += 1
     return matrix
 
+
 def getIndex(letter, matrix):
     for i in range(5):
         for j in range(5):
             if matrix[i][j] == letter:
                 return [i, j]
+
 
 def encrypt(message, key):
     matrix = mountGrid(createMatrix(), key, alphabet)
@@ -85,16 +91,29 @@ def encrypt(message, key):
         indexFirstLetter = getIndex(firstLetter, matrix)
         indexSecondLetter = getIndex(secondLetter, matrix)
         if indexFirstLetter[line] == indexSecondLetter[line]:
-            messageEncrypted += matrix[indexFirstLetter[line]][(indexFirstLetter[column] + 1) % 5]
-            messageEncrypted += matrix[indexSecondLetter[line]][(indexSecondLetter[column] + 1) % 5]
+            messageEncrypted += matrix[indexFirstLetter[line]][
+                (indexFirstLetter[column] + 1) % 5
+            ]
+            messageEncrypted += matrix[indexSecondLetter[line]][
+                (indexSecondLetter[column] + 1) % 5
+            ]
         elif indexFirstLetter[column] == indexSecondLetter[column]:
-            messageEncrypted += matrix[(indexFirstLetter[line] + 1) % 5][indexFirstLetter[column]]
-            messageEncrypted += matrix[(indexSecondLetter[line] + 1) % 5][indexSecondLetter[column]]
+            messageEncrypted += matrix[(indexFirstLetter[line] + 1) % 5][
+                indexFirstLetter[column]
+            ]
+            messageEncrypted += matrix[(indexSecondLetter[line] + 1) % 5][
+                indexSecondLetter[column]
+            ]
         else:
-            messageEncrypted += matrix[indexFirstLetter[line]][indexSecondLetter[column]]
-            messageEncrypted += matrix[indexSecondLetter[line]][indexFirstLetter[column]]
+            messageEncrypted += matrix[indexFirstLetter[line]][
+                indexSecondLetter[column]
+            ]
+            messageEncrypted += matrix[indexSecondLetter[line]][
+                indexFirstLetter[column]
+            ]
         pos += 2
     return messageEncrypted
+
 
 def decrypt(messageEncrypted, key):
     matrix = mountGrid(createMatrix(), key, alphabet)
@@ -106,21 +125,33 @@ def decrypt(messageEncrypted, key):
         indexFirstLetter = getIndex(firstLetter, matrix)
         indexSecondLetter = getIndex(secondLetter, matrix)
         if indexFirstLetter[line] == indexSecondLetter[line]:
-            messageDecrypted += matrix[indexFirstLetter[line]][(indexFirstLetter[column] - 1) % 5]
-            messageDecrypted += matrix[indexSecondLetter[line]][(indexSecondLetter[column] - 1) % 5]
+            messageDecrypted += matrix[indexFirstLetter[line]][
+                (indexFirstLetter[column] - 1) % 5
+            ]
+            messageDecrypted += matrix[indexSecondLetter[line]][
+                (indexSecondLetter[column] - 1) % 5
+            ]
         elif indexFirstLetter[column] == indexSecondLetter[column]:
-            messageDecrypted += matrix[(indexFirstLetter[line] - 1) % 5][indexFirstLetter[column]]
-            messageDecrypted += matrix[(indexSecondLetter[line] - 1) % 5][indexSecondLetter[column]]
+            messageDecrypted += matrix[(indexFirstLetter[line] - 1) % 5][
+                indexFirstLetter[column]
+            ]
+            messageDecrypted += matrix[(indexSecondLetter[line] - 1) % 5][
+                indexSecondLetter[column]
+            ]
         else:
-            messageDecrypted += matrix[indexFirstLetter[line]][indexSecondLetter[column]]
-            messageDecrypted += matrix[indexSecondLetter[line]][indexFirstLetter[column]]
+            messageDecrypted += matrix[indexFirstLetter[line]][
+                indexSecondLetter[column]
+            ]
+            messageDecrypted += matrix[indexSecondLetter[line]][
+                indexFirstLetter[column]
+            ]
         pos += 2
     return messageDecrypted
 
+
 def help():
-    print(
-        "./playfair.py [encrypt/decrypt] key message"
-    )
+    print("./playfair.py [encrypt/decrypt] key message")
+
 
 def main():
     params = sys.argv[1:]
@@ -136,6 +167,7 @@ def main():
         print(decrypt("".join(x for x in message).upper(), key))
     else:
         help()
+
 
 if __name__ == "__main__":
     main()

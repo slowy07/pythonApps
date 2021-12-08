@@ -8,7 +8,6 @@ PASSING = (1, 153, 370, 371, 1634, 24678051, 11513221901876399256509559797397152
 FAILING = (-153, -1, 0, 1.2, 200, "A", [], {}, None)
 
 
-
 def armstrong_number(n: int) -> bool:
     """
     Return True if n is an Armstrong number or False if it is not.

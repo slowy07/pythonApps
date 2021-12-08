@@ -5,14 +5,17 @@ key = int(math.pi * 1e14)
 text = input("Enter text : ")
 values = reverse = []
 
+
 def encryptChar(target):
-    #algorithm
-    target = (((target + 449 ) / key) - 449)
+    # algorithm
+    target = ((target + 449) / key) - 449
     return target
 
+
 def decryptChar(target):
-    target = (((target + 449) / key) - 42)
+    target = ((target + 449) / key) - 42
     return target
+
 
 def encrypt(inputText):
     colValues = []
@@ -23,13 +26,14 @@ def encrypt(inputText):
 
     return colValues
 
+
 def readAndDecrypt(filename):
     file = open(filename, "r")
     data = file.read()
     dataListInt = []
     actualData = []
     dataList = data.split(" ")
-    dataList.remove(' ')
+    dataList.remove(" ")
     dataListInt = [float(data) for data in dataList]
     for data in dataList:
         current1 = int(decryptChar(data))
@@ -37,6 +41,7 @@ def readAndDecrypt(filename):
         actualData.append(current1)
     file.close()
     return actualData
+
 
 def readAndEncrypt(filename):
     file = open(filename, "r")
@@ -51,12 +56,14 @@ def readAndEncrypt(filename):
     file.close()
     return encryptedList
 
+
 def readAndEncryptSave(inpFile, outFile):
     encList = readAndEncrypt(inpFile)
     output = open(outFile, "w")
     for enc in encList:
-        output.write(str(enc)+ " ")
+        output.write(str(enc) + " ")
     output.close()
+
 
 def readAndDecryptSave(inpFile, outFile):
     dencList = readAndDecrypt(inpFile)
@@ -66,25 +73,25 @@ def readAndDecryptSave(inpFile, outFile):
     output.close()
 
 
-#encryption
+# encryption
 for t in text:
     current = ord(t)
     current = encryptChar(current)
     values.append(current)
 
-#decryption
+# decryption
 for v in values:
     current = int(decryptChar(v))
     current = chr(current)
     reverse.append(current)
 print(reverse)
 
-#save data in file
+# save data in file
 output = open("encrypted.txt", "w")
 for v in values:
-    output.write(str(v)+ " ")
+    output.write(str(v) + " ")
 output.close()
 
 
-#read
+# read
 print(readAndDecrypt("encrtpyed.txt"))

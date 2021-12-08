@@ -1,9 +1,8 @@
-
 myStack = []
 
-myStack.append('a')
-myStack.append('b')
-myStack.append('c')
+myStack.append("a")
+myStack.append("b")
+myStack.append("c")
 
 myStack
 

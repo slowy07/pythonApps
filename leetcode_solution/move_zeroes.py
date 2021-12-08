@@ -9,6 +9,6 @@ class Solution(object):
             if nums[i]:
                 nums[pos] = nums[i]
                 pos += 1
-                
+
         for i in xrange(pos, len(nums)):
             nums[i] = 0

@@ -1,4 +1,6 @@
 from typing import Callable, Union
+
+
 def trapezoidal_area(
     fnc: Callable[[Union[int, float]], Union[int, float]],
     x_start: Union[int, float],

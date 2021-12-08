@@ -4,6 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+
         def getPrefix(pattern):
             prefix = [-1] * len(pattern)
             j = -1
@@ -14,9 +15,9 @@ class Solution(object):
                     j += 1
                 prefix[i] = j
             return prefix
-        
+
         if not s:
             return s
 
-        A = s + '#' + s[::-1]
-        return s[getPrefix(A)[-1] + 1:][::-1] + s
+        A = s + "#" + s[::-1]
+        return s[getPrefix(A)[-1] + 1 :][::-1] + s

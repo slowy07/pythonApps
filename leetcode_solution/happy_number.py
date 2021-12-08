@@ -9,10 +9,9 @@ class Solution(object):
             lookup[n] = True
             n = self.nextNumber(n)
         return n == 1
-    
+
     def nextNumber(self, n):
-        new =  0
+        new = 0
         for char in str(n):
             new += int(char) ** 2
         return new
-        

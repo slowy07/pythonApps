@@ -5,4 +5,3 @@ class Solution(object):
         :rtype: int
         """
         return sum(xrange(len(nums) + 1)) - sum(nums)
-        

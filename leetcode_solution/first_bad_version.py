@@ -3,6 +3,7 @@
 # @return a bool
 # def isBadVersion(version):
 
+
 class Solution(object):
     def firstBadVersion(self, n):
         """
@@ -16,5 +17,5 @@ class Solution(object):
                 right = mid - 1
             else:
                 left = mid + 1
-        
+
         return left

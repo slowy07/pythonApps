@@ -22,6 +22,7 @@ def merge(left, right):
 
     return sortedList
 
+
 def mergeSort(num):
     if len(num) <= 1:
         return num
@@ -33,6 +34,7 @@ def mergeSort(num):
 
     return merge(leftList, rightList)
 
-randomListNumbers = [12,22,72,33,12]
+
+randomListNumbers = [12, 22, 72, 33, 12]
 randomListNumbers = mergeSort(randomListNumbers)
 print(randomListNumbers)

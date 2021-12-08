@@ -1,4 +1,3 @@
-
 """
 https://www.hackerrank.com/challenges/abbr/problem
 You can perform the following operation on some string, :

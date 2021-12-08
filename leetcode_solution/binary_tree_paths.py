@@ -12,17 +12,17 @@ class Solution(object):
         """
         res = []
         stk = [(root, str(root.val))]
-        
+
         while stk:
             curr, path = stk.pop()
             if curr:
                 if curr != root:
-                    path += '->' + str(curr.val)
+                    path += "->" + str(curr.val)
                 if curr.right:
                     stk.append((curr.right, path))
                 if curr.left:
                     stk.append((curr.left, path))
                 if not curr.right and not curr.left:
                     res.append(path)
-                    
+
         return res

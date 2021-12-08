@@ -4,7 +4,7 @@ import sys
 from datetime import datetime
 
 
-subprocess.call('clear', shell=True)
+subprocess.call("clear", shell=True)
 
 remoteServer = input("enter remote host to start scan: ")
 remoteServerIp = socket.gethostbyname(remoteServer)
@@ -32,4 +32,4 @@ except socket.error:
     sys.exit()
 t2 = datetime.now()
 total = t2 - t1
-print('Scanning complete:', total)
+print("Scanning complete:", total)

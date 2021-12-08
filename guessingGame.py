@@ -9,10 +9,10 @@ time.sleep(1)
 name = input("whats your name :")
 time.sleep(1)
 print(f"okay {name} let's go!")
-a = comGuess = random.randint(0,100)
+a = comGuess = random.randint(0, 100)
 count = 0
 
-while True: #looping
+while True:  # looping
     userGuess = int(input("enter number u guess (0 - 100) :"))
     if userGuess < comGuess:
         print("to high")

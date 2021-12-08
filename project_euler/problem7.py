@@ -6,6 +6,7 @@ What is the 10 001st prime number?
 
 import numpy
 
+
 def set_num(number: int):
     """
     give return number of correct
@@ -30,9 +31,11 @@ def set_num(number: int):
                 counter += 1
 
     primes = numpy.where(f == True)[0]
-    
+
     return primes[number]
+
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

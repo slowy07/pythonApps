@@ -1,7 +1,7 @@
 number = list(map(int, input().split()))
-oddList = [i for i in number if i % 2 !=0]
+oddList = [i for i in number if i % 2 != 0]
 print(oddList)
-#exit()
+# exit()
 
 number = int(input("Enter the limit: "))
 if number <= 0:

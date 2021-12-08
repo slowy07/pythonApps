@@ -5,20 +5,55 @@ from prettytable import PrettyTable
 
 table = PrettyTable()
 
+
 def set_human(sex):
-    if sex == 'M' or sex == 'MALE' or sex == 'Male' or sex == 'male' or sex == 'm':
-        table.field_names = ["Created date", "Human id", "Name ","Surename","Hairstyle", "Country"]
+    if sex == "M" or sex == "MALE" or sex == "Male" or sex == "male" or sex == "m":
+        table.field_names = [
+            "Created date",
+            "Human id",
+            "Name ",
+            "Surename",
+            "Hairstyle",
+            "Country",
+        ]
         table.add_rows(
             [
-                [men.get_datetime(), men.human_id, name, surename, men.get_hair_men(), men.get_country()]
+                [
+                    men.get_datetime(),
+                    men.human_id,
+                    name,
+                    surename,
+                    men.get_hair_men(),
+                    men.get_country(),
+                ]
             ]
         )
         print(table.get_string())
-    elif sex == 'F' or sex == 'Female' or sex == 'Female' or sex == 'female' or sex == 'f':
-        table.field_names = ["Created date", "Human id", "Name ","Surename","Hairstyle", "Country"]
+    elif (
+        sex == "F"
+        or sex == "Female"
+        or sex == "Female"
+        or sex == "female"
+        or sex == "f"
+    ):
+        table.field_names = [
+            "Created date",
+            "Human id",
+            "Name ",
+            "Surename",
+            "Hairstyle",
+            "Country",
+        ]
         table.add_rows(
             [
-                [female.get_datetime(), female.human_id, name, surename, female.get_hair_men(), female.get_country()]
+                [
+                    female.get_datetime(),
+                    female.human_id,
+                    name,
+                    surename,
+                    female.get_hair_men(),
+                    female.get_country(),
+                ]
             ]
         )
         print(table.get_string())

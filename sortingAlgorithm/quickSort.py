@@ -1,4 +1,5 @@
-#simple quick sort
+# simple quick sort
+
 
 def partition(nums, low, high):
     pivot = nums[(low + high) // 2]
@@ -18,6 +19,7 @@ def partition(nums, low, high):
 
         nums[i], nums[j] = nums[j], nums[i]
 
+
 def quickSort(nums):
     def _quickSort(items, low, high):
         if low < high:
@@ -27,6 +29,7 @@ def quickSort(nums):
 
     _quickSort(nums, 0, len(nums) - 1)
 
-randomListNums = [12,54,12,99,52]
+
+randomListNums = [12, 54, 12, 99, 52]
 quickSort(randomListNums)
 print(randomListNums)

@@ -8,6 +8,7 @@ Find the sum of all the primes below two million.
 from doctest import DONT_ACCEPT_TRUE_FOR_1
 import numpy
 
+
 def set_num(problem_num: int):
     """
     finding algorithm prime
@@ -21,7 +22,7 @@ def set_num(problem_num: int):
 
     for i in range(2, upper + 1):
         if f[i]:
-            j = i* i
+            j = i * i
             counter = 0
             while j < number:
                 f[j] = False
@@ -34,6 +35,8 @@ def set_num(problem_num: int):
 
     return sum(subset)
 
+
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

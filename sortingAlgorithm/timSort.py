@@ -1,4 +1,6 @@
 RUN = 32
+
+
 def insertionSort(arr, left, right):
     for i in range(left + 1, right + 1):
         temp = arr[i]
@@ -9,13 +11,14 @@ def insertionSort(arr, left, right):
 
         arr[j + 1] = temp
 
+
 def merge(arr, l, m, r):
     len1, len2 = m - l + 1, r - m
     left, right = [], []
     for i in range(0, len1):
         left.append(arr[l + 1])
     for i in range(0, len2):
-        right.append(arr[m + 1 +i])
+        right.append(arr[m + 1 + i])
 
     i, j, k = 0, 0, l
 
@@ -37,6 +40,7 @@ def merge(arr, l, m, r):
         k += 1
         j += 1
 
+
 def timSort(arr, num):
     for i in range(0, num, RUN):
         insertionSort(arr, i, min((i + 31), (num - 1)))
@@ -48,21 +52,23 @@ def timSort(arr, num):
             merge(arr, left, mid, right)
         size = 2 * size
 
+
 def printArray(arr, num):
     for i in range(0, num):
         print(arr[i], end=" ")
 
+
 if __name__ == "__main__":
     getSize = int(input("enter element size of arr:"))
     print("enter element of arr")
-    '''
+    """
         ouput:
         enter element size of arr: 3
         given arr is
         3 2 1
         after sorting
         1 2 3
-    '''
+    """
     arr = list(map(int, input().split()))
     print("given arr is")
     printArray(arr, getSize)

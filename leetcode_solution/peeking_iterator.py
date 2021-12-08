@@ -19,6 +19,7 @@
 #         :rtype: int
 #         """
 
+
 class PeekingIterator(object):
     def __init__(self, iterator):
         """
@@ -36,7 +37,6 @@ class PeekingIterator(object):
             self.pked = True
             self.pk = self.iter.next()
         return self.pk
-        
 
     def next(self):
         """
@@ -46,13 +46,13 @@ class PeekingIterator(object):
             self.pked = False
             return self.pk
         return self.iter.next()
-        
 
     def hasNext(self):
         """
         :rtype: bool
         """
         return self.pked or self.iter.hasNext()
+
 
 # Your PeekingIterator object will be instantiated and called as such:
 # iter = PeekingIterator(Iterator(nums))

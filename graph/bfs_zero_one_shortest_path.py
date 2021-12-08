@@ -2,6 +2,7 @@ from collections import deque
 from dataclasses import dataclass
 from typing import Iterator, List
 
+
 @dataclass
 class Edge:
     """Weighted directed graph edge."""

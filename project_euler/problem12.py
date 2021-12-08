@@ -19,6 +19,7 @@ divisors?
 """
 import math
 
+
 def count_divisor(number):
     number_divisor = 0
     for i in range(1, int(math.sqrt(number)) + 1):
@@ -27,6 +28,7 @@ def count_divisor(number):
     if number ** 0.5 == int(number ** 0.5):
         number_divisor -= 1
     return number_divisor
+
 
 def set_solution():
     """
@@ -40,10 +42,12 @@ def set_solution():
         triangle_number += i
         if count_divisor(triangle_number) > 500:
             break
-    
+
     return triangle_number
+
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
     print(set_solution())

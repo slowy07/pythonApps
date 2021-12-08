@@ -2,11 +2,11 @@
 for case if find caesar message bruteforce
 """
 
-message = "GIEWIVrGMTLIVrHIQS" 
-letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+message = "GIEWIVrGMTLIVrHIQS"
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 for key in range(len(letters)):
-    translated = ''
+    translated = ""
     for symbol in message:
         if symbol in letters:
             num = letters.find(symbol)
@@ -16,4 +16,4 @@ for key in range(len(letters)):
             translated = translated + letters[num]
         else:
             translated = translated + symbol
-print("key #%s : %s"%(key, translated))
+print("key #%s : %s" % (key, translated))

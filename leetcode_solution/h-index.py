@@ -11,6 +11,5 @@ class Solution(object):
                 h += 1
             else:
                 break
-        
+
         return h
-        

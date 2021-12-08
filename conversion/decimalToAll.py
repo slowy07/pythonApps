@@ -1,4 +1,4 @@
-def decimalToAll(num: int, base: int) ->str:
+def decimalToAll(num: int, base: int) -> str:
     if isinstance(num, float):
         raise TypeError("int() can't convert non-string with explicit base")
     if num < 0:
@@ -37,8 +37,10 @@ def decimalToAll(num: int, base: int) ->str:
 
     return new_value[::-1]
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
 
     for base in range(2, 37):

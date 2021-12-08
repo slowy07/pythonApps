@@ -6,11 +6,13 @@ def binaryAnd(a: int, b: int) -> str:
     bBinary = str(bin(b))[2:]
     maxLength = max(len(aBinary), len(bBinary))
 
-    return "0b"+"".join(
+    return "0b" + "".join(
         str(int(char_a == "1" and char_b == "1"))
         for char_a, char_b in zip(aBinary.zfill(maxLength), bBinary.zfill(maxLength))
     )
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

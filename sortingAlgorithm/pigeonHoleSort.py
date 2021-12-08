@@ -15,6 +15,7 @@ def pigeonHoleSort(nums):
             nums[i] = count + minNumbers
             i += 1
 
-nums = [12,26,77,22,88,1]
+
+nums = [12, 26, 77, 22, 88, 1]
 print(pigeonHoleSort(nums))
 print(nums)

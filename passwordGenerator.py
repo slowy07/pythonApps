@@ -2,12 +2,16 @@ import string as str
 import secrets
 import random
 
-class passwordGenerator():
 
+class passwordGenerator:
     @staticmethod
-
     def genSequence(conditions):
-        possibleCharacters = [str.ascii_lowercase, str.ascii_uppercase, str.digits, str.punctuation]
+        possibleCharacters = [
+            str.ascii_lowercase,
+            str.ascii_uppercase,
+            str.digits,
+            str.punctuation,
+        ]
         sequence = ""
         for x in range(len(conditions)):
             if conditions[x]:
@@ -18,17 +22,19 @@ class passwordGenerator():
         return sequence
 
     @staticmethod
-    def generatePassword(sequence, passlength= 8):
-        password = ''.join((secrets.choice(sequence) for i in range(passlength)))
+    def generatePassword(sequence, passlength=8):
+        password = "".join((secrets.choice(sequence) for i in range(passlength)))
         return password
 
-class interface():
+
+class interface:
     hasCharacters = {
         "lowercase": True,
         "uppercase": True,
         "digits": True,
-        "punctuation": True
+        "punctuation": True,
     }
+
     @classmethod
     def changeHasCharacter(cls, change):
         try:
@@ -38,14 +44,15 @@ class interface():
         else:
             cls.hasCharacters[change] = not cls.hasCharacters[change]
             print(f"{change} is now set to {cls.hasCharacters[change]}")
+
     @classmethod
     def showCharacters(cls):
         print(cls.hasCharacters)
 
-
     def generatingPassword(self, lenght):
         sequence = passwordGenerator.genSequence(list(self.hasCharacters.values()))
         print(passwordGenerator.generatePassword(sequence, lenght))
+
 
 def listToVerticalString(list):
     toReturn = ""
@@ -54,8 +61,8 @@ def listToVerticalString(list):
 
     return toReturn
 
-class running:
 
+class running:
     def decideOperation():
         userInput = input("pass: ")
         try:
@@ -73,8 +80,9 @@ class running:
         <generate password ->
         <lenght of the password>
         commands to change the characters to be used to generate passwords:{listToVerticalString(interface.has_characters.keys())}"""
-        
+
         print(menu)
+
     while True:
         decideOperation()
 

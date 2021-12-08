@@ -1,6 +1,7 @@
 import time
 from calendar import isleap
 
+
 def leapYear(year):
     if isleap(year):
         return True
@@ -20,6 +21,7 @@ def month_days(month, leap_year):
     elif month == 2 and (not leap_year):
         return 28
 
+
 name = input("input your name: ")
 age = input("input your age: ")
 localtime = time.localtime(time.time())
@@ -33,7 +35,7 @@ end_year = begin_year + year
 
 # calculate the days
 for y in range(begin_year, end_year):
-    if (leapYear(y)):
+    if leapYear(y):
         day = day + 366
     else:
         day = day + 365

@@ -1,5 +1,6 @@
 import collections
 
+
 class Solution(object):
     def isAnagram(self, s, t):
         """
@@ -9,7 +10,7 @@ class Solution(object):
         """
         if len(s) != len(t):
             return False
-        
+
         count = collections.defaultdict(int)
         for c in s:
             count[c] += 1
@@ -18,5 +19,3 @@ class Solution(object):
             if count[c] < 0:
                 return False
         return True
-        
-        

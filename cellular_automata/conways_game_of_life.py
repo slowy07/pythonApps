@@ -16,6 +16,7 @@ GLIDER = [
 
 BLINKER = [[0, 1, 0], [0, 1, 0], [0, 1, 0]]
 
+
 def new_generation(cells: List[List[int]]) -> List[List[int]]:
     next_generation = []
     for i in range(len(cells)):
@@ -38,9 +39,13 @@ def new_generation(cells: List[List[int]]) -> List[List[int]]:
                 neighbour_count += cells[i + 1][j]
             if i < len(cells) - 1 and j < len(cells[i]) - 1:
                 neighbour_count += cells[i + 1][j + 1]
-            
+
             alive = cells[i][j] == 1
-            if((alive and 2 <= neighbour_count <= 3) or not alive and neighbour_count == 3):
+            if (
+                (alive and 2 <= neighbour_count <= 3)
+                or not alive
+                and neighbour_count == 3
+            ):
                 next_generation_row.append(1)
             else:
                 next_generation_row.append(0)
@@ -60,12 +65,13 @@ def generate_image(cells: list[list[int]], frames) -> list[Image.Image]:
             for y in range(len(cells[0])):
                 colour = 255 - cells[x][y] * 255
                 pixels[x, y] = (colour, colour, colour)
-        
+
         images.append(img)
         cells = new_generation(cells)
 
     return images
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     images = generate_image(GLIDER, 16)
-    images[0].save("out.gif", save_all = True, append_images = images[1:])
+    images[0].save("out.gif", save_all=True, append_images=images[1:])

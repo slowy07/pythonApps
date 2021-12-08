@@ -1,4 +1,4 @@
-import hashlib #pip install hashlib
+import hashlib  # pip install hashlib
 
 
 stringHash = input("enter message to generate code :")

@@ -1,4 +1,4 @@
-def crcCheck(data,div):
+def crcCheck(data, div):
     lengthData = len(div)
     ct = 0
     data = [int(i) for i in data]
@@ -11,7 +11,7 @@ def crcCheck(data,div):
         msb = tempData[0]
         if msb == 0:
             result.append(0)
-            for i in range(lengthData, -1, -1 , -1):
+            for i in range(lengthData, -1, -1, -1):
                 tempData[i] = tempData[i] ^ zero[i]
         else:
             result.append(1)
@@ -19,12 +19,13 @@ def crcCheck(data,div):
                 tempData[i] = tempData[i] ^ div[i]
 
         tempData.pop(0)
-        if(lengthData + j < len(data)):
+        if lengthData + j < len(data):
             tempData.append(data[lengthData + j])
-    
+
     crc = tempData
-    print("Quotient :",result, "remainder ",crc)
+    print("Quotient :", result, "remainder ", crc)
     return crc
+
 
 while 1 > 0:
     print("enter data")
@@ -32,20 +33,20 @@ while 1 > 0:
     print("enter division: ")
     div = input()
     originalData = data
-    data = data + ("0" *(len(div)- 1))
+    data = data + ("0" * (len(div) - 1))
     crc = crcCheck(data, div)
     crcStr = ""
     for c in crc:
         crcStr += c
-    print("send data :",originalData + crcStr)
+    print("send data :", originalData + crcStr)
     sentData = originalData + crcStr
     print("if again applying crc algo, the remainder must be zero if errorless")
     crc = crcCheck(sentData, div)
     remainder = crc
-    print("receive side remainder : ",remainder)
+    print("receive side remainder : ", remainder)
     print("continue [n/y]")
     ch = input()
-    if ch == 'N' or ch == 'n':
+    if ch == "N" or ch == "n":
         break
     else:
         continue

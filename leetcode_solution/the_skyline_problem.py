@@ -1,4 +1,6 @@
 start, end, height = 0, 1, 2
+
+
 class Solution(object):
     def getSkyline(self, buildings):
         """
@@ -18,7 +20,7 @@ class Solution(object):
             res.append([last_end, 0])
 
         return res
-    
+
     def ComputeSkylineInInterval(self, buildings, left_endpoint, right_endpoint):
         if right_endpoint - left_endpoint <= 1:
             return buildings[left_endpoint:right_endpoint]
@@ -40,36 +42,38 @@ class Solution(object):
                 merged.append(right_skyline[j])
                 j += 1
             elif left_skyline[i][start] <= right_skyline[j][start]:
-                i, j = self.MergeIntersectSkylines(merged, left_skyline[i], i,\
-                                                   right_skyline[j], j)
-            else: # left_skyline[i][start] > right_skyline[j][start].
-                j, i = self.MergeIntersectSkylines(merged, right_skyline[j], j, \
-                                                   left_skyline[i], i)
+                i, j = self.MergeIntersectSkylines(
+                    merged, left_skyline[i], i, right_skyline[j], j
+                )
+            else:  # left_skyline[i][start] > right_skyline[j][start].
+                j, i = self.MergeIntersectSkylines(
+                    merged, right_skyline[j], j, left_skyline[i], i
+                )
 
         # Insert the remaining skylines.
         merged += left_skyline[i:]
         merged += right_skyline[j:]
         return merged
-    
+
     def MergeIntersectSkylines(self, merged, a, a_idx, b, b_idx):
         if a[end] <= b[end]:
-            if a[height] > b[height]:   # |aaa|
-                if b[end] != a[end]:    # |abb|b
+            if a[height] > b[height]:  # |aaa|
+                if b[end] != a[end]:  # |abb|b
                     b[start] = a[end]
                     merged.append(a)
                     a_idx += 1
-                else:             # aaa
-                    b_idx += 1    # abb
+                else:  # aaa
+                    b_idx += 1  # abb
             elif a[height] == b[height]:  # abb
-                b[start] = a[start]       # abb
+                b[start] = a[start]  # abb
                 a_idx += 1
             else:  # a[height] < b[height].
-                if a[start] != b[start]:                            #    bb
+                if a[start] != b[start]:  #    bb
                     merged.append([a[start], b[start], a[height]])  # |a|bb
                 a_idx += 1
         else:  # a[end] > b[end].
             if a[height] >= b[height]:  # aaaa
-                b_idx += 1              # abba
+                b_idx += 1  # abba
             else:
                 #    |bb|
                 # |a||bb|a

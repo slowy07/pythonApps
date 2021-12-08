@@ -1,6 +1,6 @@
 import pandas as pd
 
-playerData = pd.read_csv('resource/playerStatUpdate.csv')
+playerData = pd.read_csv("resource/playerStatUpdate.csv")
 
 
 resetData = playerData.reset_index(drop=True)

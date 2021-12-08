@@ -1,4 +1,4 @@
-def octalToDecimal(octString: str)->str:
+def octalToDecimal(octString: str) -> str:
     octString = str(octString).strip()
     if not octString:
         raise ValueError("empty string was passed to function")
@@ -15,6 +15,8 @@ def octalToDecimal(octString: str)->str:
 
     return decimalNumber
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     from doctest import testmod
+
     testmod()

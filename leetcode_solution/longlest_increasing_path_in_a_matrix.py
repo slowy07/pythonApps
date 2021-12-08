@@ -11,9 +11,12 @@ class Solution(object):
                 return max_lengths[i][j]
             max_depth = 0
             for di, dj in directions:
-                x, y = i+di, j+dj
-                if 0 <= x < len(matrix) and 0 <= y < len(matrix[0]) and \
-                   matrix[x][y] < matrix[i][j]:
+                x, y = i + di, j + dj
+                if (
+                    0 <= x < len(matrix)
+                    and 0 <= y < len(matrix[0])
+                    and matrix[x][y] < matrix[i][j]
+                ):
                     max_depth = max(max_depth, longestpath(matrix, x, y, max_lengths))
             max_lengths[i][j] = max_depth + 1
             return max_lengths[i][j]

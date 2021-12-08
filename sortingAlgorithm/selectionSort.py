@@ -8,7 +8,6 @@ def selectionSort(nums):
         nums[i], nums[lowestValueIndex] = nums[lowestValueIndex], nums[i]
 
 
-
 randomListOfNums = [12, 8, 3, 20, 11]
 selectionSort(randomListOfNums)
 print(randomListOfNums)

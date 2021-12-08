@@ -8,7 +8,7 @@ s.listen(3)
 print("server ip address :", ipAddress)
 
 while True:
-    print('waiting connection')
+    print("waiting connection")
     connection, clientAddress = s.accept()
     try:
         print("connected ", clientAddress)

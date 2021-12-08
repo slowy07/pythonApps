@@ -9,4 +9,4 @@ imageName = input("enter image name to save :")
 imageNameResult = imageName + ".png"
 url = pyqrcode.create(generateData)
 
-url.png(imageNameResult, scale = 6)
+url.png(imageNameResult, scale=6)

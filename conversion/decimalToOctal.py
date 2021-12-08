@@ -1,6 +1,7 @@
 import math
 
-def decimalToOctal(num: int)->str:
+
+def decimalToOctal(num: int) -> str:
     octal = 0
     counter = 0
     while num > 0:
@@ -9,7 +10,8 @@ def decimalToOctal(num: int)->str:
         counter += 1
         num = math.floor(num / 8)
 
-    return (f"0o{int(octal)}")
+    return f"0o{int(octal)}"
+
 
 def main():
     print("\n2 in octal is:")
@@ -24,5 +26,6 @@ def main():
     print(decimalToOctal(512))  # = 1000
     print("\n")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

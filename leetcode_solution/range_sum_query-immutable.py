@@ -1,5 +1,4 @@
 class NumArray(object):
-
     def __init__(self, nums):
         """
         :type nums: List[int]
@@ -15,9 +14,8 @@ class NumArray(object):
         :rtype: int
         """
         return self.accu[right + 1] - self.accu[left]
-        
 
 
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)
-# param_1 = obj.sumRange(left,right)  
+# param_1 = obj.sumRange(left,right)

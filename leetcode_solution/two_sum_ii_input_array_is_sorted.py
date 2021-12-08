@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: List[int]
         """
         start, end = 0, len(nums) - 1
-        
+
         while start != end:
             sum = nums[start] + nums[end]
             if sum > target:

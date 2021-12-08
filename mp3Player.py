@@ -6,15 +6,16 @@ from tkinter import *
 
 
 frameWindow = Tk()
-frameWindow.minsize(300,300)
+frameWindow.minsize(300, 300)
 
-#info song
+# info song
 listOfSong = []
 realNames = []
 
 v = StringVar()
 songLabel = Label(frameWindow, textvariable=v, width=35)
 index = 0
+
 
 def directoryChooser():
     directory = askdirectory()
@@ -24,19 +25,22 @@ def directoryChooser():
         if files.endswith(".mp3"):
             realdir = os.path.realpath(files)
             audio = ID3(realdir)
-            realNames.append(audio['TIT2'].text[0])
-            
-            
+            realNames.append(audio["TIT2"].text[0])
+
             listOfSong.append(files)
-    
+
     pygame.mixer.init()
     pygame.mixer.music.load(listOfSong[0])
-    
+
+
 directoryChooser()
+
+
 def updateLabel():
     global index
     v.set(realNames[index])
-    #return songName
+    # return songName
+
 
 def nextSong(event):
     global index
@@ -45,6 +49,7 @@ def nextSong(event):
     pygame.mixer.music.play()
     updateLabel()
 
+
 def prevSong(event):
     global index
     index -= 1
@@ -52,10 +57,12 @@ def prevSong(event):
     pygame.mixer.music.play()
     updateLabel()
 
+
 def stopSong(event):
     pygame.mixer.music.stop()
     v.set("")
-    #return songName
+    # return songName
+
 
 label = Label(frameWindow, text="music player")
 label.pack()

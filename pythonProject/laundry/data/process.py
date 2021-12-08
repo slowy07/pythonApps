@@ -53,7 +53,7 @@ class laundryinfo:
 
 def save_data():
     filename = f"laundry_{timenow.strftime('%d-%B-%Y')}.txt"
-    text_information = f"desc :{user.get_user_information()}\nnama : {user.get_username()}\nharga : price\nwaktu: time\n\n" # lgtm [py/call/wrong-arguments]
+    text_information = f"desc :{user.get_user_information()}\nnama : {user.get_username()}\nharga : price\nwaktu: time\n\n"  # lgtm [py/call/wrong-arguments]
     save_data_log = open(filename, "a")
     save_data_log.write(text_information)
     save_data_log.close()

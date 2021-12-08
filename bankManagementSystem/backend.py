@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def connect_database():
     global conn
     global cur
@@ -8,8 +9,11 @@ def connect_database():
     cur = conn.cursor()
 
     cur.execute(
-        "create table if not exists bank (acc_no int, name text, age int, address text, balance int, account_type text, mobile_number int)")
-    cur.execute("create table if not exists staff (name text, pass text,salary int, position text)")
+        "create table if not exists bank (acc_no int, name text, age int, address text, balance int, account_type text, mobile_number int)"
+    )
+    cur.execute(
+        "create table if not exists staff (name text, pass text,salary int, position text)"
+    )
     cur.execute("create table if not exists admin (name text, pass text)")
     cur.execute("insert into admin values('admin','123')")
     conn.commit()
@@ -58,8 +62,10 @@ def check_employee(name, password):
 # create customer details in database
 def create_customer(name, age, address, balance, acc_type, mobile_number):
     global acc_no
-    cur.execute("insert into bank values(?,?,?,?,?,?,?)",
-                (acc_no, name, age, address, balance, acc_type, mobile_number))
+    cur.execute(
+        "insert into bank values(?,?,?,?,?,?,?)",
+        (acc_no, name, age, address, balance, acc_type, mobile_number),
+    )
     conn.commit()
     acc_no = acc_no + 1
     return acc_no - 1
@@ -85,7 +91,15 @@ def get_details(acc_no):
     if len(detail) == 0:
         return False
     else:
-        return (detail[0][0], detail[0][1], detail[0][2], detail[0][3], detail[0][4], detail[0][5], detail[0][6])
+        return (
+            detail[0][0],
+            detail[0][1],
+            detail[0][2],
+            detail[0][3],
+            detail[0][4],
+            detail[0][5],
+            detail[0][6],
+        )
 
 
 # add new balance of customer in bank database
@@ -138,7 +152,9 @@ def update_age_in_bank_table(new_name, acc_no):
 # update_address_in_bank_table
 def update_address_in_bank_table(new_name, acc_no):
     print(new_name)
-    conn.execute("update bank set address='{}' where acc_no={}".format(new_name, acc_no))
+    conn.execute(
+        "update bank set address='{}' where acc_no={}".format(new_name, acc_no)
+    )
     conn.commit()
 
 
@@ -199,13 +215,17 @@ def update_employee_password(new_pass, old_name):
 
 def update_employee_salary(new_salary, old_name):
     print(new_salary, old_name)
-    cur.execute("update staff set salary={} where name='{}'".format(new_salary, old_name))
+    cur.execute(
+        "update staff set salary={} where name='{}'".format(new_salary, old_name)
+    )
     conn.commit()
 
 
 def update_employee_position(new_pos, old_name):
     print(new_pos, old_name)
-    cur.execute("update staff set position='{}' where name='{}'".format(new_pos, old_name))
+    cur.execute(
+        "update staff set position='{}' where name='{}'".format(new_pos, old_name)
+    )
     conn.commit()
 
 

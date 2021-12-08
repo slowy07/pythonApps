@@ -14,7 +14,6 @@ def leaf(scale, r, g, b):
     turtle.end_fill()
 
 
-
 def main():
     turtle.hideturtle()
     turtle.speed(0)

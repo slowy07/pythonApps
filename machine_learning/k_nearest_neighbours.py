@@ -6,11 +6,12 @@ from sklearn.model_selection import train_test_split
 
 data = datasets.load_iris()
 
-x = np.array(data['data'])
-y = np.array(data['target'])
+x = np.array(data["data"])
+y = np.array(data["target"])
 classes = data["target_names"]
 
 X_train, X_test, y_train, y_test = train_test_split(x, y)
+
 
 def euclidan_distance(a, b):
     """
@@ -23,7 +24,7 @@ def euclidan_distance(a, b):
     return np.linalg.norm(np.array(a) - np.array(b))
 
 
-def classifier(train_data, train_target, classes, point, k = 5):
+def classifier(train_data, train_target, classes, point, k=5):
     """
     Classifies the point using the KNN algorithm
     k closest points are found (ranked in ascending order of euclidean distance)
@@ -46,10 +47,12 @@ def classifier(train_data, train_target, classes, point, k = 5):
 
     votes = [i[1] for i in sorted(distances)[:k]]
     result = Counter(votes).most_common(1)[0][0]
-    
+
     return classes[result]
+
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
     print(classifier(X_train, y_train, classes, [4.4, 3.1, 1.3, 1.4]))

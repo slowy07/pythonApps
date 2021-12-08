@@ -24,6 +24,7 @@ WEIGHT_TYPE_CHART = {
     "atomic-mass-unit": 1.660540199e-27,
 }
 
+
 def weight_conversion(from_type: str, to_type: str, value: float) -> float:
     if to_type not in KILOGRAM_CHART or from_type not in WEIGHT_TYPE_CHART:
         raise ValueError(

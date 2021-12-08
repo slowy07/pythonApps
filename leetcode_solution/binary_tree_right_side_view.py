@@ -4,6 +4,8 @@ class TreeNode(object):
         self.val = x
         self.left = None
         self.right = None
+
+
 class Solution(object):
     def rightSideView(self, root):
         """
@@ -12,9 +14,9 @@ class Solution(object):
         """
         if root is None:
             return []
-        
+
         result, current = [], [root]
-        
+
         while current:
             next_level = []
             for node in current:
@@ -22,8 +24,8 @@ class Solution(object):
                     next_level.append(node.left)
                 if node.right:
                     next_level.append(node.right)
-                
+
             result.append(node.val)
             current = next_level
-            
+
         return result

@@ -1,6 +1,7 @@
 hexTable = {hex(i)[2:]: i for i in range(16)}
 
-def hexToDecimal(hexString: str)->str:
+
+def hexToDecimal(hexString: str) -> str:
     hexString = hexString.strip().lower()
     if not hexString:
         raise ValueError("empty string was passed to the function")
@@ -14,6 +15,8 @@ def hexToDecimal(hexString: str)->str:
         decimalNumber = 16 * decimalNumber + hexTable[char]
     return -decimalNumber if isNegative else decimalNumber
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     from doctest import testmod
+
     testmod()

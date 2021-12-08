@@ -17,6 +17,7 @@ values = {
     15: "f",
 }
 
+
 def decimalToHexadecimal(decimal):
     assert type(decimal) in (int, float) and decimal == int(decimal)
     hexadecimal = ""
@@ -32,7 +33,9 @@ def decimalToHexadecimal(decimal):
         hexadecimal = "-" + hexadecimal
     return hexadecimal
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     from doctest import testmod
+
     testmod()
     print(decimalToHexadecimal(2))

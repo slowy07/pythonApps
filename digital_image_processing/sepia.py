@@ -6,13 +6,13 @@ from cv2 import destroyAllWindows, imread, imshow, waitKey
 
 
 def make_sepia(img, factor: int):
-    
+
     pixel_h, pixel_v = img.shape[0], img.shape[1]
     """
     Function create sepia tone.
     Source: https://en.wikipedia.org/wiki/Sepia_(color)
     """
-    
+
     def to_grayscale(blue, green, red):
         return 0.2126 * red + 0.587 * green + 0.114 * blue
 
@@ -28,8 +28,9 @@ def make_sepia(img, factor: int):
                 normalize(greyscale + factor),
                 normalize(greyscale + 2 * factor),
             ]
-    
+
     return img
+
 
 if __name__ == "__main__":
     # read original image

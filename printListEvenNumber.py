@@ -1,7 +1,7 @@
 listNumber = list(map(int, input().split()))
-evenList = [i for i in listNumber if i%2 == 0]
+evenList = [i for i in listNumber if i % 2 == 0]
 print(evenList)
-#exit()
+# exit()
 
 
 number = int(input("enter the require range :"))

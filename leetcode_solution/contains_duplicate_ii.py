@@ -12,8 +12,7 @@ class Solution(object):
             else:
                 if i - lookup[num] <= k:
                     return True
-                
+
                 lookup[num] = i
-            
+
         return False
-        

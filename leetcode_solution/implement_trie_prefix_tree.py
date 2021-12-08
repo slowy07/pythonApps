@@ -5,10 +5,8 @@ class TrieNode(object):
 
 
 class Trie(object):
-
     def __init__(self):
         self.root = TrieNode()
-        
 
     def insert(self, word):
         """
@@ -18,10 +16,9 @@ class Trie(object):
         cur = self.root
         for c in word:
             if not c in cur.leaves:
-                cur.leaves[c]  = TrieNode()
-            cur =  cur.leaves[c]
+                cur.leaves[c] = TrieNode()
+            cur = cur.leaves[c]
         cur.is_string = True
-        
 
     def search(self, word):
         """
@@ -32,7 +29,6 @@ class Trie(object):
         if node:
             return node.is_string
         return False
-        
 
     def startsWith(self, prefix):
         """
@@ -40,7 +36,7 @@ class Trie(object):
         :rtype: bool
         """
         return self.childSearch(prefix)
-    
+
     def childSearch(self, word):
         cur = self.root
         for c in word:
@@ -48,8 +44,9 @@ class Trie(object):
                 cur = cur.leaves[c]
             else:
                 return None
-        
+
         return cur
+
 
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()

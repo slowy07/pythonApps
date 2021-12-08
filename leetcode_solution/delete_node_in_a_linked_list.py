@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
     def deleteNode(self, node):
         """
@@ -14,5 +15,5 @@ class Solution(object):
             node_to_delete = node.next
             node.val = node_to_delete.val
             node.next = node_to_delete.next
-            
+
             del node_to_delete

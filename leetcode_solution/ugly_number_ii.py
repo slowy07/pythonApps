@@ -1,4 +1,6 @@
 import heapq
+
+
 class Solution(object):
     def nthUglyNumber(self, n):
         """

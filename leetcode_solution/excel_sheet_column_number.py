@@ -7,6 +7,6 @@ class Solution(object):
         result = 0
         for i in xrange(len(columnTitle)):
             result *= 26
-            result += ord(columnTitle[i]) - ord('A') + 1
-            
+            result += ord(columnTitle[i]) - ord("A") + 1
+
         return result

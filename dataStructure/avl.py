@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+
 class Node:
     def __init__(self, label):
         self.label = label
@@ -7,7 +8,6 @@ class Node:
         self._left = None
         self._right = None
         self.height = 0
-
 
     @property
     def right(self):
@@ -24,6 +24,7 @@ class Node:
         return self.left
 
     left.setter
+
     def left(self, node):
         if node is not None:
             node._parent = self
@@ -43,7 +44,6 @@ class Node:
 
 
 class AVL:
-
     def __init__(self):
         self.root = None
         self.size = 0
@@ -97,11 +97,17 @@ class AVL:
                 if height_left > height_right:
                     left_child = n.left
                     if left_child is not None:
-                        h_right = (left_child.right.height
-                                    if (left_child.right is not None) else 0)
-                        h_left = (left_child.left.height
-                                    if (left_child.left is not None) else 0)
-                    if (h_left > h_right):
+                        h_right = (
+                            left_child.right.height
+                            if (left_child.right is not None)
+                            else 0
+                        )
+                        h_left = (
+                            left_child.left.height
+                            if (left_child.left is not None)
+                            else 0
+                        )
+                    if h_left > h_right:
                         self.rotate_left(n)
                         break
                     else:
@@ -110,11 +116,17 @@ class AVL:
                 else:
                     right_child = n.right
                     if right_child is not None:
-                        h_right = (right_child.right.height
-                            if (right_child.right is not None) else 0)
-                        h_left = (right_child.left.height
-                            if (right_child.left is not None) else 0)
-                    if (h_left > h_right):
+                        h_right = (
+                            right_child.right.height
+                            if (right_child.right is not None)
+                            else 0
+                        )
+                        h_left = (
+                            right_child.left.height
+                            if (right_child.left is not None)
+                            else 0
+                        )
+                    if h_left > h_right:
                         self.double_rotate_left(n)
                         break
                     else:
@@ -128,7 +140,6 @@ class AVL:
         node.parent.right = Node(aux)
         node.parent.right.height = node.parent.height + 1
         node.parent.left = node.right
-
 
     def rotate_right(self, node):
         aux = node.parent.label
@@ -164,6 +175,7 @@ class AVL:
 
     def getRoot(self):
         return self.root
+
 
 t = AVL()
 t.insert(1)
