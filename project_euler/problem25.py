@@ -16,5 +16,5 @@ def solution(n: int = 1000) -> int:
 
     return ans + 1
 
-
-print(solution(int(str(input()).strip())))
+if __name__ == "__main__":
+    print(solution(1000))

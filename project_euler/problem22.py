@@ -4,7 +4,7 @@ import os
 def solution() -> None:
     total_sum = 0
     temp_sum = 0
-    with open(os.path.dirname(__file__) + "problem22.txt") as file:
+    with open(os.path.dirname(__file__) + "/problem22.txt") as file:
         name = str(file.readlines()[0])
         name = name.replace('"', "").split(",")
 
