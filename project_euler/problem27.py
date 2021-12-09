@@ -1,5 +1,6 @@
 import math
 
+
 def is_prime(k: int) -> bool:
     """
     >>> is_prime(10)
@@ -11,15 +12,16 @@ def is_prime(k: int) -> bool:
         return False
     elif k == 2:
         return True
-    
+
     else:
         for x in range(3, int(math.sqrt(k) + 1), 2):
             if k % x == 0:
                 return False
-    
+
     return True
 
-def solution(a_limit: int=1000, b_limit: int = 1000) -> int:
+
+def solution(a_limit: int = 1000, b_limit: int = 1000) -> int:
     """
     >>> solution(1000, 1000)
     -59231
@@ -34,7 +36,7 @@ def solution(a_limit: int=1000, b_limit: int = 1000) -> int:
             if is_prime(b):
                 count = 0
                 n = 0
-                while is_prime((n ** 2) + (a * n) +b):
+                while is_prime((n ** 2) + (a * n) + b):
                     count += 1
                     n += 1
                 if count > longest[0]:
@@ -43,5 +45,6 @@ def solution(a_limit: int=1000, b_limit: int = 1000) -> int:
     ans = longest[1] * longest[2]
 
     return ans
+
 
 print(solution(-1000, -1000))
