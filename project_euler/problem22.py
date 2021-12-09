@@ -2,10 +2,6 @@ import os
 
 
 def solution() -> None:
-    """
-    >>> solution()
-    871198282
-    """
     total_sum = 0
     temp_sum = 0
     with open(os.path.dirname(__file__) + "problem22.txt") as file:
