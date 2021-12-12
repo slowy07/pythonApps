@@ -22,8 +22,9 @@ def list_truncated_nums(n: int) -> list[int]:
     for i in range(1, len(str_num)):
         list_num.append(int(str_num[i:]))
         list_num.append(int(str_num[:-i]))
-    
+
     return list_num
+
 
 def validate(n: int) -> bool:
     if len(str(n)) > 3:
@@ -31,6 +32,7 @@ def validate(n: int) -> bool:
             return False
 
     return True
+
 
 def compute_truncated_prime(count: int = 11) -> list[int]:
     list_truncated_primes: list[int] = []
@@ -42,15 +44,15 @@ def compute_truncated_prime(count: int = 11) -> list[int]:
                 list_truncated_primes.append(num)
 
         num += 2
-    
+
     return list_truncated_primes
+
 
 def solution() -> int:
     return sum(compute_truncated_prime(11))
 
 
 print(solution())
-    
 
 
 print(is_prime(87))
