@@ -5,6 +5,7 @@ from fractions import Fraction
 def is_digit_cancelling(num: int, den: int) -> bool:
     """
     >>> is_digit_cancelling(2, 2)
+    False
     """
     if num != den:
         if num % 10 == den // 10:
