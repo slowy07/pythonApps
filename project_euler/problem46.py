@@ -17,7 +17,9 @@ def is_prime(n: int) -> bool:
     """
     return sieve[n]
 
+
 odd_composites = [num for num in range(3, len(sieve), 2) if not is_prime(num)]
+
 
 def compute_nums(n: int) -> list[int]:
     """
@@ -34,10 +36,10 @@ def compute_nums(n: int) -> list[int]:
     for num in range(len(odd_composites)):
         i = 0
         while 2 * i * i <= odd_composites[num]:
-            rem = odd_composites[num] -2 * i * i
+            rem = odd_composites[num] - 2 * i * i
             if is_prime(rem):
                 break
-            
+
             i += 1
         else:
             list_nums.append(odd_composites[num])
@@ -46,11 +48,13 @@ def compute_nums(n: int) -> list[int]:
 
     return []
 
+
 def solution() -> int:
     return compute_nums(1)[0]
 
 
 if __name__ == "__main__":
     import doctest
+
     print("solution: {}".format(solution()))
     doctest.testmod(verbose=True)
