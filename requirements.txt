@@ -18,3 +18,10 @@ xgboost
 wikipedia
 PyAutoGUI
 pyscreenshot
+flake8
+pytest
+pytest-cov
+coverage
+mypy
+black==21.7b0
+isort
