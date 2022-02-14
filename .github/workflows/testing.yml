@@ -38,7 +38,7 @@ jobs:
       run: |
         echo "Mulai jalankan install requirement"
         python -m pip install --upgrade pip
-        pip install -r requirements.txt -r dev-requirements.txt
+        pip install -r requirements.txt
       # memformat kode secara otomatis dengan black
       # tujuannya agar kode lebih mudah dibaca
     - name: Format otomatis
