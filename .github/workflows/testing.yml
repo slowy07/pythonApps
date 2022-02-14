@@ -44,8 +44,7 @@ jobs:
     - name: Format otomatis
       run: |
         echo "Mulai format otomatis"
-        isort . --profile=black
-        black .
+        isort .
       # ketika sudah di format maka kode akan mengcommit kembali
       # dan commit akan otomatis menggunakan github bot yang sudah tersedia
       # disini kondisi jika file tersebut ada perubahan maka akan di format
