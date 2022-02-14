@@ -2,6 +2,7 @@
 # https://github.com/opencv/opencv/tree/master/data/haarcascades
 
 import pickle
+
 import tensorflow as tf
 
 model = tf.keras.models.sequential(
@@ -39,7 +40,9 @@ pickle.dump(model, open(filename, "wb"))
 
 from tkinter import Tk
 from tkinter.dialog import askopenfilename
+
 from tensorflow.keras.preprocessing import image
+
 import numpy as np
 
 Tk().withdraw()

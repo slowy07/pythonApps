@@ -1,6 +1,6 @@
 import csv
-import requests
 
+import requests
 
 status_dict = {"Website": "Status"}
 

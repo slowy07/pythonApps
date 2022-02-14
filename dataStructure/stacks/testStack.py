@@ -1,5 +1,6 @@
 import unittest
-from stack import Stack, EmptyStackException
+
+from stack import EmptyStackException, Stack
 
 
 class TestStack(unittest.TestCase):

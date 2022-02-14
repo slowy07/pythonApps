@@ -1,6 +1,6 @@
-import requests
 import webbrowser
 
+import requests
 
 pageCount = 10
 url = (

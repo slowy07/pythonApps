@@ -1,6 +1,7 @@
 import collections
 import heapq
 
+
 class Twitter(object):
 
     def __init__(self):

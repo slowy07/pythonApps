@@ -1,11 +1,6 @@
-from os import chdir
-from os import makedirs
-from os import rename
-from os import removedirs
-from os.path import exitsts
-from os.path import pardir
-from shutil import copytree
-from shutil import move
+from os import chdir, makedirs, removedirs, rename
+from os.path import exitsts, pardir
+from shutil import copytree, move
 
 
 def createDirectory(name):

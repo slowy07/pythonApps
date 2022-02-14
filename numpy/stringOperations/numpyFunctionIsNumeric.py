@@ -2,7 +2,6 @@
 
 import numpy as np
 
-
 # counting a substring
 print(np.char.isnumeric("arfyslowy"))
 

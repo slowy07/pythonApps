@@ -1,8 +1,8 @@
-from imutils import face_utils
-import dlib
 import cv2
-import numpy as np
+import dlib
+from imutils import face_utils
 
+import numpy as np
 
 pre_trained_model = "classifier/shape_predictor_68_face_landmarks.dat"
 detector = dlib.get_frontal_face_detector()

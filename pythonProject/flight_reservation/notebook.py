@@ -1,7 +1,6 @@
-from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
 import sqlite3
+from tkinter import *
+from tkinter import messagebox, ttk
 
 window = Tk()
 window.title("airline management system")

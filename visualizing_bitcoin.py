@@ -1,7 +1,7 @@
-import pandas_datareader as pd_reader
-import matplotlib.pyplot as plt
 import datetime as dt
 
+import matplotlib.pyplot as plt
+import pandas_datareader as pd_reader
 
 crypto = "BTC"
 currency = "USD"

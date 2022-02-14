@@ -1,6 +1,6 @@
-import re  # regular expression
 import calendar
 import datetime
+import re  # regular expression
 
 
 def processDate(userInput):

@@ -1,5 +1,5 @@
-import math
 import collections
+import math
 
 
 def estimate_shannon_entropy(dna_sequence):

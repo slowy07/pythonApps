@@ -1,7 +1,6 @@
-import men
 import female
+import men
 from prettytable import PrettyTable
-
 
 table = PrettyTable()
 

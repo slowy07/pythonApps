@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+
 class Node:
     def __init__(self, label, parent):
         self.label = label

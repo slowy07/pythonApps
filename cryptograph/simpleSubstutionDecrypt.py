@@ -1,4 +1,5 @@
 import random
+
 chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + \
    'abcdefghijklmnopqrstuvwxyz' + \
    '0123456789' + \

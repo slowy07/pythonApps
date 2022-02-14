@@ -1,14 +1,13 @@
 import json
-from os import chdir, system
-from os import walk
-from os.path import curdir
-from os.path import pardir
-from urllib.parse import urlencode
-from utllib.request import urlopen, Requests
-import requests
 import ssl
+from os import chdir, system, walk
+from os.path import curdir, pardir
+from urllib.parse import urlencode
+
+import requests
 from bs4 import BeautifulSoup
 from directory import createDirectory
+from utllib.request import Requests, urlopen
 
 ssl._create_default_https_context = ssl._create_unverified_context
 

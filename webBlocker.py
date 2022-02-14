@@ -1,5 +1,5 @@
-from time import *
 from datetime import *
+from time import *
 
 host_path = r"/etc/hosts"
 redirect = "127.0.0.1"

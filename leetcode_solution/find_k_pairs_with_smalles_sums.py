@@ -1,4 +1,5 @@
-from heapq import heappush, heappop
+from heapq import heappop, heappush
+
 
 class Solution(object):
     def kSmallestPairs(self, nums1, nums2, k):

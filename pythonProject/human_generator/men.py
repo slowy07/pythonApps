@@ -1,6 +1,5 @@
-import random
 import datetime
-
+import random
 
 human_id = random.randint(1, 900000)
 

@@ -1,6 +1,8 @@
 from __future__ import print_function
+
 import os
 import urllib.request
+
 from selenium import webdriver
 
 print("test internet connection")

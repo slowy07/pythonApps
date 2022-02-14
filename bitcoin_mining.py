@@ -1,6 +1,5 @@
-from hashlib import sha256
 import time
-
+from hashlib import sha256
 
 MAXIMUM_NONCE = 10000000000000
 

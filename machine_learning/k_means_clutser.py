@@ -1,9 +1,10 @@
 import warnings
 
-import numpy as np
-import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.metrics import pairwise_distances
+
+import numpy as np
+import pandas as pd
 
 warnings.filterwarnings("ignore")
 

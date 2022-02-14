@@ -1,5 +1,6 @@
-import PIL
 from tkinter.filedialog import *
+
+import PIL
 
 file_path = askopenfilenames()
 img = PIL.Image.open(file_path)

@@ -1,8 +1,9 @@
-from requests import exceptions
 import argparse
-import requests
-import cv2
 import os
+
+import cv2
+import requests
+from requests import exceptions
 
 ap = argparse.ArgumentParser()
 ap.add_argument(

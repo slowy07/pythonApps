@@ -2,9 +2,10 @@ import platform
 import random
 import string
 import threading
-import request
 import time
 from os import system
+
+import request
 
 if platform.system() == "Linux":
     title = "Linux"

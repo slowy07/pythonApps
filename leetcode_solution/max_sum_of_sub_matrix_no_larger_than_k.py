@@ -1,5 +1,6 @@
 from bisect import bisect_left, insort
 
+
 class Solution(object):
     def maxSumSubmatrix(self, matrix, k):
         """

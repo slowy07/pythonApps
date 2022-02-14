@@ -1,13 +1,14 @@
-import cv2
-import numpy as np
-import math
-import colorsys
-import pandas as pd
-import os
 import argparse
-from tqdm import tqdm
-import sound
+import colorsys
+import math
+import os
 
+import cv2
+import sound
+from tqdm import tqdm
+
+import numpy as np
+import pandas as pd
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-f", required=True, help="Enter filename of your picture : ")

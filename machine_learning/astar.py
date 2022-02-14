@@ -1,5 +1,6 @@
-import numpy as np
 import doctest
+
+import numpy as np
 
 """
 The A* algorithm combines features of uniform-cost search and pure

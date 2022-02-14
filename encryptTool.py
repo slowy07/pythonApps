@@ -1,4 +1,5 @@
 from __future__ import print_function
+
 import math
 
 key = int(math.pi * 1e14)

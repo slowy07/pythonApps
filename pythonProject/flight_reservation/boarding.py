@@ -1,9 +1,9 @@
-from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
 import sqlite3
-import tkinter
 import time
+import tkinter
+from tkinter import *
+from tkinter import messagebox, ttk
+
 from PIL import Image
 
 right = Tk()

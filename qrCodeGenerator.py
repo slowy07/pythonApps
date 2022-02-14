@@ -1,7 +1,7 @@
 # pip install PyQRCode
 
-import pyqrcode
 import PIL
+import pyqrcode
 from pyqrcode import QRCode
 
 generateData = input("enter text to convert :")

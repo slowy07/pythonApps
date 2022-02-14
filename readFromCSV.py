@@ -1,6 +1,7 @@
-import pandas as pd
 from matplotlib import pyplot as plt
 from matplotlib import style
+
+import pandas as pd
 
 style.user("ggplot")
 

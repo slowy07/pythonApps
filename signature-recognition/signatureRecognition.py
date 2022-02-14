@@ -5,23 +5,24 @@ DIRECTORY ='resource'
 SIGNATURE_CLASSES = ['A', 'B', 'C','D','E','F','K','L','M','N','O','P']
 
 
-import os, random
-import numpy as np
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import log_loss
-from sklearn.preprocessing import LabelEncoder
+import os
+import random
 
 import matplotlib.pyplot as plt
-from matplotlib import ticker
-
-from keras.models import Sequential
-from keras.layers import Dropout, Flatten, Convolution2D, MaxPooling2D, ZeroPadding2D, Dense, Activation
-from keras.optimizers import SGD, Adagrad
-from keras.callbacks import EarlyStopping
-from keras.utils import np_utils
-from keras.optimizers import RMSprop, Adam
 from keras import backend as K
+from keras.callbacks import EarlyStopping
+from keras.layers import (Activation, Convolution2D, Dense, Dropout, Flatten,
+                          MaxPooling2D, ZeroPadding2D)
+from keras.models import Sequential
+from keras.optimizers import SGD, Adagrad, Adam, RMSprop
+from keras.utils import np_utils
+from matplotlib import ticker
+from sklearn.metrics import log_loss
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+
+import numpy as np
+import pandas as pd
 
 ROWS = 190
 COLS = 160

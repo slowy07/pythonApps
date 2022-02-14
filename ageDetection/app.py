@@ -1,11 +1,13 @@
+import os
+
+import cv2
 import streamlit as st
 from PIL import Image
-import numpy as np
-import cv2
-import os
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.image import img_to_array
+
+import numpy as np
 
 
 def mask_image():

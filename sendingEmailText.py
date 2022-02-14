@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-import smtplib
 import base64
+import smtplib
 
 filename = "myTextEmail.txt"
 

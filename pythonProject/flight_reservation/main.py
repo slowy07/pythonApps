@@ -1,12 +1,11 @@
-from tkinter import *
-from PIL import Image
-from tkinter import messagebox
-from tkinter import ttk
-import sqlite3
-import tkinter
-import time
-
 import os.path
+import sqlite3
+import time
+import tkinter
+from tkinter import *
+from tkinter import messagebox, ttk
+
+from PIL import Image
 
 # main screen
 root = Tk()

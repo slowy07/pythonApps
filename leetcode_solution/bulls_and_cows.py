@@ -1,7 +1,6 @@
 import operator
-
-from collections import defaultdict, Counter
-from itertools import izip, imap
+from collections import Counter, defaultdict
+from itertools import imap, izip
 
 
 class Solution(object):

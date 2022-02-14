@@ -1,5 +1,5 @@
-import time
 import random
+import time
 
 name = input("Whats ur name :")
 

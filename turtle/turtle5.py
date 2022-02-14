@@ -1,5 +1,5 @@
-import turtle
 import random
+import turtle
 
 number_of_leaves = 15
 

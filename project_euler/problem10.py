@@ -6,6 +6,7 @@ Find the sum of all the primes below two million.
 
 
 from doctest import DONT_ACCEPT_TRUE_FOR_1
+
 import numpy
 
 

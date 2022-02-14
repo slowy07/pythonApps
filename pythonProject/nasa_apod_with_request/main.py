@@ -1,8 +1,8 @@
-from requests.models import parse_url
-from settings import key
-import requests
 import os
 
+import requests
+from requests.models import parse_url
+from settings import key
 
 date = input("enter date (year-month-date) :")
 r = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={key}&date={date}")

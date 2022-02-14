@@ -1,9 +1,9 @@
-import pyautogui
-from PIL import Image
+import time
 
+import pyautogui
 # for mac and windows : from PIL import ImageGrab
 import pyscreenshot as ImageGrab  # for linux user
-import time
+from PIL import Image
 
 
 def hit(key):

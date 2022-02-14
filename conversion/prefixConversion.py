@@ -1,6 +1,7 @@
 from enum import Enum
 from typing import Union
 
+
 class SI_Unit(Enum):
     yotta = 24
     zetta = 21

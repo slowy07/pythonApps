@@ -1,7 +1,8 @@
-from machine_learning.k_nearest_neighbours import X_test, X_train
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+
+from machine_learning.k_nearest_neighbours import X_test, X_train
 
 iris = load_iris()
 iris.key()

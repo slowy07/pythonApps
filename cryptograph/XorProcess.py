@@ -1,6 +1,6 @@
 def xor_crypt_string(data, key="awesomepassword", encode=False, decode=False):
-    from itertools import izip, cycle
     import base64
+    from itertools import cycle, izip
 
     if decode:
         data = base64.decodestring(data)

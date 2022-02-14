@@ -1,6 +1,7 @@
+import math
 import os
 import sys
-import math
+
 
 class AES(object):
     '''AES funtions for a single block

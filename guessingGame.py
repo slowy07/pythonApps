@@ -1,7 +1,6 @@
 import random
 import time
 
-
 print("----------------------------")
 print("welcome to guessing game")
 time.sleep(1)

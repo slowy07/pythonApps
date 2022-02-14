@@ -1,9 +1,10 @@
 import random
 import sys
 
-import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
+
+import numpy as np
 
 usage_doc = "Usage of script: script_nama <size_of_canvas:int>"
 

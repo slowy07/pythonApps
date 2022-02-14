@@ -1,5 +1,5 @@
-from urllib.request import urlopen
 import ssl
+from urllib.request import urlopen
 
 """
 for information about beautifulsoup or how to install check on:

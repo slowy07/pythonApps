@@ -1,6 +1,5 @@
 import time
 from time import strftime
-
 from tkinter import *
 from tkinter.ttk import *
 

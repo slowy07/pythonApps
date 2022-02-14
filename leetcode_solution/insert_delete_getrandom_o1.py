@@ -1,5 +1,6 @@
 from random import randint
 
+
 class RandomizedSet(object):
 
     def __init__(self):

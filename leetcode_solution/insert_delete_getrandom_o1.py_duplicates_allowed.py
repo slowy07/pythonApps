@@ -1,5 +1,6 @@
-from random import randint
 from collections import defaultdict
+from random import randint
+
 
 class RandomizedCollection(object):
 

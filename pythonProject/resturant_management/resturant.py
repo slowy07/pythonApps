@@ -1,6 +1,6 @@
-from tkinter import *
 import random
 import time
+from tkinter import *
 
 root = Tk()
 root.geometry("1600x700+0+0")

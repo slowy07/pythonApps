@@ -1,6 +1,6 @@
+import doctest
 from collections import namedtuple
 from typing import List
-import doctest
 
 
 class schedulling:

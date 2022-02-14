@@ -1,5 +1,6 @@
 import random
 
+
 # ---get bot say message from bot_message.txt
 def say_bot():
     file = open("bot_message.txt")

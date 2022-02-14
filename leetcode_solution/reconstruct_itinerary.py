@@ -1,5 +1,6 @@
 import collections
 
+
 class Solution(object):
     def findItinerary(self, tickets):
         """

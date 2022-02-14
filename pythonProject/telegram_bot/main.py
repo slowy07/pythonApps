@@ -1,7 +1,6 @@
-import telebot
-
-import say_bot
 import emojis
+import say_bot
+import telebot
 
 bot = telebot.TeleBot("", parse_mode=None)
 

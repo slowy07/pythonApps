@@ -1,4 +1,6 @@
 import bisect
+
+
 class Solution(object):
     def increasingTriplet(self, nums):
         """

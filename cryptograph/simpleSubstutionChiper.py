@@ -1,4 +1,5 @@
-import random, sys
+import random
+import sys
 
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 def main():
