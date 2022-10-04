@@ -13,11 +13,11 @@ Fraud adalah tindakan curang yang dilakukan sedemikian rupa, sehingga menguntung
 ## Deteksi penipuan menggunakan data yang tidak berlabel
 """
 
+import matplotlib.pyplot as plt
+
 # Commented out IPython magic to ensure Python compatibility.
 import numpy as np
 import pandas as pd
-
-import matplotlib.pyplot as plt
 
 # %matplotlib inline
 
@@ -86,6 +86,7 @@ df.shape
 y.shape
 
 from sklearn.preprocessing import MinMaxScaler
+
 X = np.array(df).astype(np.float)
 
 scaler = MinMaxScaler()
@@ -110,6 +111,7 @@ K means clustering merupakan metode algoritma dasar,yang diterapkan sebagai beri
 """
 
 from sklearn.cluster import MiniBatchKMeans
+
 kmeans = MiniBatchKMeans(n_clusters=8, random_state=0)
 kmeans.fit(X_scaled)
 
@@ -162,8 +164,8 @@ np.unique(X_test_clusters)
 kita telah mengetahui semua pengamatan sebagai penipuan, jika mereka berada di persentil ke-5 teratas dalam jarak dari pusat
 """
 
-from sklearn.metrics import roc_auc_score, confusion_matrix
 import seaborn as sn
+from sklearn.metrics import confusion_matrix, roc_auc_score
 
 print(roc_auc_score(y_test, km_y_pred))
 
@@ -273,8 +275,9 @@ print(count)
 
 """### menghapus stopword"""
 
-from nltk.corpus import stopwords
 import string
+
+from nltk.corpus import stopwords
 
 # stopword untuk dikecualikan
 stop = set(stopwords.words('english'))
@@ -287,6 +290,7 @@ exclude = set(string.punctuation)
 df = df[df.clean_content.notnull()]
 
 from nltk.stem.wordnet import WordNetLemmatizer
+
 lemma = WordNetLemmatizer()
 
 def clean(text, stop):
